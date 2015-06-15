@@ -1,12 +1,17 @@
  
 /* start css.sty */
-.ecbx-1728{font-size:170%; font-weight: bold;}
-.ecbx-1728{ font-weight: bold;}
-.ecbx-1728{ font-weight: bold;}
-.ectt-1000{ font-family: monospace;}
-.ectt-1000{ font-family: monospace;}
-.ectt-1000{ font-family: monospace;}
-.small-caps{font-variant: small-caps; }
+.cmtt-10{font-family: monospace;}
+.cmbx-12{font-size:120%; font-weight: bold;}
+.cmbx-12{ font-weight: bold;}
+.cmbx-12{ font-weight: bold;}
+.cmbx-10{ font-weight: bold;}
+.cmbx-10{ font-weight: bold;}
+.cmbx-10{ font-weight: bold;}
+.cmsl-10{font-style: oblique;}
+.cmbxsl-10{ font-weight: bold; font-style: oblique;}
+.cmbxsl-10{ font-weight: bold; font-style: oblique;}
+.cmbxsl-10{ font-weight: bold; font-style: oblique;}
+.cmti-10{ font-style: italic;}
 p.noindent { text-indent: 0em }
 td p.noindent { text-indent: 0em; margin-top:0em; }
 p.nopar { text-indent: 0em; }
