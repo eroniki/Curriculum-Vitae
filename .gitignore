@@ -44,5 +44,6 @@
 *.4tc
 *.4ct
 *.lg
+*.png
 template/
 bibtex/
