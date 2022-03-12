@@ -1,0 +1,235 @@
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{Ambarkutuk_Resume}
+
+\begin{document}
+\nocite{ambarkutuk2022sensor}
+\nocite{ambarkutuk2021uncertainty}
+\nocite{sa2021investigation}
+\nocite{sa2020towards}
+\nocite{ambarkutuk2017grid}
+\nocite{ocak2015image}
+\nocite{guner2015meslek}
+\nocite{guner2014distance}
+\nocite{guner2013magnetic}
+
+\begin{center}
+    {\Huge \scshape Murat Ambarkutuk} \\ \vspace{1pt}
+    \faHome~402 Ellett Road, Blacksburg, VA 204060
+	~ \small \raisebox{-0.1\height}\faPhone\ 302-772-8419
+	~ \href{mailto:murata@vt.edu}{\raisebox{-0.2\height}\faEnvelope\  \underline{murata@vt.edu}} \\
+	~ \href{https://murat.ambarkutuk.com}{\raisebox{-0.2\height}\faBookmark\  \underline{https://murat.ambarkutuk.com}} 
+    ~ \href{https://linkedin.com/in/muratambarkutuk/}{\raisebox{-0.2\height}\faLinkedin\ \underline{muratambarkutuk}}
+	~ \href{https://github.com/eroniki}{\raisebox{-0.2\height}\faGithub\ \underline{eroniki}}
+	~ \href{https://code.vt.edu/murata}{\raisebox{-0.2\height}\faGitlab\ \underline{https://code.vt.edu/murata}}
+	\vspace{-8pt}
+\end{center}
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {PhD in Computer Engineering}
+	  {2018 -- On going}
+      {The Bradley Department of Electrical and Computer Engineering at Virginia Tech}{Blacksburg, VA}
+	  \textit{\underline{Advisor:}} Prof. Pablo A. Tarazaga \\
+	  \textit{\underline{Dissertation Topic:}} A Sensor Fusion Technique for Spatial Gait Parameters from Structural Vibration and Computer Vision 
+	  \resumeSubheading
+      {MS in Mechanical Engineering}
+	  {2015 -- 2018}
+      {Mechanical Engineering at Virginia Tech}{Blacksburg, VA}
+	  \textit{\underline{Advisor:}} Prof. Tomonari Furukawa \\
+	  \textit{\underline{Thesis:}} A Grid based Indoor Radiolocation Technique Based on Spatially Coherent Path Loss Model
+	  
+	  \resumeSubheading
+      {BS in Mechatronics Engineering}
+	  {2008 -- 2013}
+      {Mechatronics Engineering Department at Kocaeli University}{Kocaeli, Turkey}
+	  \textit{\underline{Advisor:}} Prof. Hasan Ocak \\
+	  \textit{\underline{Thesis:}} Box Dimensioning System with Kinect Sensor
+  \resumeSubHeadingListEnd
+
+%-----------PROGRAMMING SKILLS-----------
+\section{Technical \& Language Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages:}{~Python, MATLAB, C, C++, HTML/CSS, JavaScript, PHP} \\
+	 \textbf{Frameworks:}{~OpenCV, numpy, scipy, matplotlib, scikit-learn, scikit-image, Flask, keras, Tensorflow, Jupyter, ROS, Eigen, \LaTeX} \\
+     \textbf{Technologies:}{~Linux, Version Control, GitHub, GitLab, CI/CD} \\
+	 \textbf{Language Proficiency:}{~Turkish (Native), English (Proficient), German (Novice)}
+    }}
+ \end{itemize}
+ \vspace{-16pt}
+
+%
+\section{Relevant Coursework}
+	\begin{multicols}{3}
+		\begin{itemize}[itemsep=-5pt, parsep=3pt]
+			\item\small Robust Estimation \& Filtering
+			\item Computer Vision
+			\item Advanced Computer Vision
+			\item Advanced Machine Learning
+			\item Bayesian Robotics
+			\item Experimental Robotics
+			\item Experimental Methods \& Signal Processing
+			\item Advanced Robotics \& Automation
+		\end{itemize}
+	\end{multicols}
+	\vspace*{2.0\multicolsep}
+
+%-----------EXPERIENCE-----------
+\section{Relevant Professional Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Baykar Defense}{2018 -- 2020}
+      {Computer Vision Engineer}{Remote}
+      \resumeItemListStart
+ 		\resumeItem{Collaborated with a team of developers to develop a software product that generates 2D and 3D maps with photos taken by an autonomous UAV in stages.}
+		\resumeItem{Developed a signal processing algorithm to filter the inertial measurements of the UAV and calculate the pose of the cameras in the air.}
+		\resumeItem{Developed an algorithm to sync the calculated poses \& inertial measurements to the images.}
+		\resumeItem{Developed an iterative Computer Vision algorithm to project the corners of the images to the ground to generate the initial guess while considering the elevation changes in the scene.}
+		\resumeItem{Developed a Sensor Fusion algorithm to correct results of the previous stages of the map-making algorithm with statistical representation.}
+		\resumeItem{Implemented Test-driven Development paradigm in the dev-team. On that front, generated tests to check coverage, style requirements, and performance \& accuracy of the developed algorithms.}
+		\resumeItem{Architected the CI/CD pipeline to automate the aforementioned tests and generated automated reports from the results of the tests.}
+	\resumeItemListEnd
+
+    \resumeSubheading
+      {Robotik Maden R\&D Automation LLC}{2013-2015}
+      {Embedded Software Engineer}{Kocaeli, Turkey}
+      \resumeItemListStart
+        \resumeItem{Developed wireless sensor nodes to monitor critical environmental variables in a coal mine.}
+		\resumeItem{Developed a backend structure to move the real-time measurements from the wireless nodes to the cloud.}
+	\resumeItemListEnd
+  \resumeSubHeadingListEnd
+\vspace{-16pt}
+% \section{Honors, Achievements, Awards, \& Scholarships}
+%     \resumeSubHeadingListStart
+% 		\resumeSubheading{Full Academic Scholarship}{2015 -- Present}{The Ministry of National Education, Turkey}{}
+% 		\resumeSubheading{Motion and Control Days Robotics Competition}{2011}{Competition of Mechanical Engineering Chamber, Turkey}{$3^{rd}$ Place}
+%     \resumeSubHeadingListEnd
+\section{Projects}
+    \vspace{-5pt}
+    \resumeSubHeadingListStart
+		\resumeProjectHeading
+		{
+			\textbf{Analysis of Operational Modes of Deployable Booms in Cube Satellites $|$ Ut ProSat - I} \\
+			\qquad \small Supervisors: J Black, L Harding $|$ \href{https://vsgc.odu.edu/virginiacubesatconstellation/}{\faBookmark~Website} $|$ Sponsor: Virginia Space Space@VT \& NASA
+		}
+		{2021 -- Present}
+		\resumeItemListStart
+			\resumeItem{Contributed to the hardware selection and design process in the manufacturing of a cube satellite that is missioned to test deployers in lower-orbit space.}
+			\resumeItem{Compile the mission plan, provide premilinary analysis of data and power budget specifically with the selected components of the deployer mechanism.}
+			\resumeItem{Developed the necessary embedded software and test procedures required by the deployer subsystem.}
+		\resumeItemListEnd
+		\vspace{-13pt}
+
+		\resumeProjectHeading
+		{
+			\textbf{Sensor Fusion for Occupant Localization in Smart Buildings} \\
+			\qquad \small Advisor: PA Tarazaga $|$ Related publications: \cite{ambarkutuk2022sensor, ambarkutuk2021uncertainty,sa2021investigation, sa2020towards}
+		}
+		{2019 -- Present}
+		\resumeItemListStart
+			\resumeItem{Developed a robust algorithm that estimates heel-strike locations from the accelerometer measurements of a vibrating floor.}
+			\resumeItem{Developed a Computer Vision-based algorithm to localize heel-strike locations from images taken by a stereoscopic camera.}
+            \resumeItem{Developed a sensor fusion framework to incorporate the vibration- and vision-based heel-strike locations.}
+			\resumeItem{Developed a combined simulation environment that can generate the vibration and visual information necessary for the validation of the algorithms developed.}
+			\resumeItem{Quantified the efficacy and accuracy of implementations with simulations and controlled experiments.}
+          \resumeItemListEnd
+		\vspace{-13pt}
+		
+		\resumeProjectHeading
+		{
+			\textbf{Validation Study for Stereoscopic Techniques in Gait Analysis} \\
+			\qquad \small Advisors: RM Queen, PA Tarazaga
+		}
+		{2020 -- Present}
+		\resumeItemListStart
+			\resumeItem{Developed an automatic gait analysis system based on a Deep Neural Network that can track different gait parameters throughout the gait cycle.}
+			\resumeItem{Implemented a correction algorithm to the misdetections of the deep network detection results based on temporal coherence and epipolar geometry.}
+			\resumeItem{Validated the efficacy of the system with controlled experiments and compared the results to a marker-based Motion Capture system.}
+		\resumeItemListEnd
+		\vspace{-13pt}
+		
+		\resumeProjectHeading
+		{
+			\textbf{Quantification of Collaboration and Communication among Students in a Smart Classroom} \\
+			\qquad \small Advisors: T Baird, PA Tarazaga $|$ \href{https://vtx.vt.edu/articles/2018/05/icat-steelcaseaward.html}{\faBookmark~News Article} $|$ \href{http://build.cnre.vt.edu:5000/}{\faBookmark~Project Website}
+		}
+		{2019 -- Present} 
+		\resumeItemListStart
+		\resumeItem{Designed a sensor-suite for a smart classroom to quantify the collaboration among students.}
+		\resumeItem{Developed a backend control the sensor-suite.}
+		\resumeItem{Exposed the backend via a WEB-app to remotely control and monitor the system.}
+		\resumeItemListEnd 
+		\vspace{-13pt}
+
+		\resumeProjectHeading
+		{
+			\textbf{Visual Localization of A Car During a Crash Test} \\
+			\qquad \small Advisor: T Furukawa $|$ Sponsor: Honda Japan 
+		}
+		{2017 -- 2018}
+		\resumeItemListStart
+			\resumeItem{Designed and manufactured a sensor-suite that provides inertial measurements and images of a downward facing camera to localize a vehicle under the heavy vibrations during car-crash tests.}
+			\resumeItem{Developed an efficient algorithm to localize the vehicle with a combinatoral method that is based on a featured-based localization, visual odometry technique and inertial measurements.}
+		\resumeItemListEnd 
+		\vspace{-13pt}
+		
+		\resumeProjectHeading
+		{
+		\textbf{A Grid-based Indoor Radiolocation Technique based on Spatially Coherent Path Loss Model} \\
+			\qquad \small Advisor: T Furukawa $|$ Publications: \cite{ambarkutuk2017grid}
+		}
+		{2015 -- 2018}
+		\resumeItemListStart
+			\resumeItem{Derived a probablistic framework of a passive radio-localization technique under multipath propagation that can determine the location of different entities, namely, occupants, robots, and invenvorty, in indoor enviroments.}
+			\resumeItem{Developed the localization algorithm based on the probablistic framework.}
+			\resumeItem{Validated the efficacy of the algorithm with controlled experiments whose results were presented at IEEE RAS conference.}
+		\resumeItemListEnd 
+    \resumeSubHeadingListEnd
+	\vspace{-15pt}
+%-----------INVOLVEMENT---------------
+\section{Community Service \& Leadership}
+    \resumeSubHeadingListStart
+		\resumeSubheading{Society of Experimental Mechanics}{Spring-2021 -- Present}{Student Member}{Virginia Tech}
+		\resumeSubheading{IEEE Robotics and Automation Society}{Fall 2018 -- Present}{Reviewer}{Virginia Tech}
+		\resumeItemListStart
+			\resumeItem{Reviewed academic submissions International Conference on Multisensor Fusion and Integration for Intelligent Systems on various years.}
+		\resumeItemListEnd
+        \resumeSubheading{Turkish Student Assoc. at Virginia Tech}{Spring 2020 -- Present}{Secretary}{Virginia Tech}
+            \resumeItemListStart
+				\resumeItem{Collaborated with a team of volunteers to re-establish the RSO.}
+				\resumeItem{Developed chapters of the RSO constitution.}
+				\resumeItem{Organized events to promote and introduce Turkish culture and language at Virginia Tech.}
+ 				\resumeItem{Provided mentoring and support to the Turkish students acclimate them to the culture in the US.}
+                \resumeItem{Coordinated with the University staff during the organization of an event in ISF2021.~\href{https://www.youtube.com/watch?v=ra85LY_PKVo}{[Video]}}
+                \resumeItem{Wrote and narrated the script of a video prepared to promote TSA.~\href{https://youtu.be/mzJY0DCSSqU}{[Video]}}
+				\resumeItem{Organized different fundraising events, and oversaw the development of the branded mechandise for the RSO.}
+            \resumeItemListEnd
+			\resumeSubheading{Vibrations, Adaptive Structures, and Testing Laboratory, at Virginia Tech}{Spring 2020 -- Present}{Scrum Master}{Virginia Tech}
+            \resumeItemListStart
+ 				\resumeItem{Organized biweekly research meetings and biweekly collaboration meetings where the member of the group presented their scholarly work and held technical workshops. During these events, I introduced different tools/frameworks to my group such as Git, VS Code, etc. }
+				\resumeItem{Implemented scrum style stand up meetings where members of the research group inform each other about their research work and request help if needed. With this structure, the research group was able to exchange ideas and collaborate efficiently.}
+            \resumeItemListEnd
+    \resumeSubHeadingListEnd
+\vspace{-16pt}
+
+\bibliographystyle{abbrvnat}
+{
+	\footnotesize
+	\bibliography{refs}
+}
+\vspace{-12pt}
+
+\section{Interests}
+	\begin{multicols}{3}
+		\begin{itemize}[itemsep=-5pt, parsep=3pt]
+			\item \small Analog Photography
+			\item Running
+			\item Gardening
+		\end{itemize}
+	\end{multicols}
+	\vspace*{2.0\multicolsep}
+\end{document}
