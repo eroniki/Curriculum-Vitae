@@ -1,6 +1,7 @@
 \documentclass[letterpaper,11pt]{article}
 
 \usepackage{Ambarkutuk_Resume}
+\usepackage{ragged2e}
 
 \begin{document}
 \nocite{ambarkutuk2023}
@@ -8,29 +9,46 @@
 \nocite{sa2021investigation}
 \nocite{sa2020towards}
 \nocite{ambarkutuk2017grid}
-\nocite{ocak2015image}
-\nocite{guner2015meslek}
-\nocite{guner2014distance}
-\nocite{guner2013magnetic}
+% \nocite{ocak2015image}
+% \nocite{guner2015meslek}
+% \nocite{guner2014distance}
+% \nocite{guner2013magnetic}
 
 \begin{center}
     {\Huge \scshape Murat Ambarkutuk} \\ \vspace{1pt}
     % \faHome~402 Ellett Road, Blacksburg, VA 204060
 	% ~ \small \raisebox{-0.1\height}\faPhone\ 302-772-8419
-	~ \href{mailto:murat@ambarkutuk.com}{\raisebox{-0.2\height}\faEnvelope\  \underline{murat@ambarkutuk.com}}
-	~ \href{https://murat.ambarkutuk.com}{\raisebox{-0.2\height}\faBookmark\  \underline{https://murat.ambarkutuk.com}} \\
-    ~ \href{https://linkedin.com/in/muratambarkutuk/}{\raisebox{-0.2\height}\faLinkedin\ \underline{muratambarkutuk}}
-	~ \href{https://github.com/eroniki}{\raisebox{-0.2\height}\faGithub\ \underline{eroniki}}
-	~ \href{https://code.vt.edu/murata}{\raisebox{-0.2\height}\faGitlab\ \underline{https://code.vt.edu/murata}}
+	~ \href{mailto:murat@ambarkutuk.com}{\raisebox{-0.2\height}\faEnvelope\ \small \underline{murat@ambarkutuk.com}}
+	~ \href{https://murat.ambarkutuk.com}{\raisebox{-0.2\height}\faBookmark\ \small \underline{murat.ambarkutuk.com}} \\
+    ~ \href{https://linkedin.com/in/muratambarkutuk/}{\raisebox{-0.2\height}\faLinkedin\ \small \underline{muratambarkutuk}}
+	~ \href{https://github.com/eroniki}{\raisebox{-0.2\height}\faGithub\ \small \underline{eroniki}}
+	~ \href{https://code.vt.edu/murata}{\raisebox{-0.2\height}\faGitlab\ \small \underline{code.vt.edu/murata}}
 	\vspace{-8pt}
 \end{center}
 
+\section{Objective}
+\begin{justify}
+	A PhD candidate in Computer Engineering at Virginia Tech, focusing on Machine and Software Intelligence, with a dedication to applying expertise in Computer Vision, Sensor Fusion, and Machine Learning to address complex challenges in robotics, perception, and autonomy.
+	Currently on a J1 Exchange Scholar visa with 36 months of pre-approved work authorization, available to start in mid-September 2024.
+\end{justify}
+%-----------PROGRAMMING SKILLS-----------
+\section{Technical \& Language Skills}
+\begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+		\textbf{Programming Languages:}{~Python, C++, MATLAB, C, HTML/CSS, JavaScript, \LaTeX} \\
+     \textbf{Robotics \& Machine Learning:}{~ROS, TensorFlow, PyTorch, Keras, scikit-learn, OpenCV, Jupyter, PyMC3} \\
+	 \textbf{Cloud, DevOps \& Infrastructure:}{~Linux, Version Control (Git), Containerization and Orchestration (Docker, Docker Compose, Kubernetes), AWS (EC2, S3, Lambda, SageMaker), CI/CD (Jenkins, GitHub Actions, GitLab CI), Terraform, Ansible} \\
+     \textbf{Frameworks \& Libraries:}{~numpy, scipy, pandas, Flask, Bootstrap} \\
+	 \textbf{Languages:}{~Turkish (Native), English (Proficient), German (Novice)}
+    }}
+\end{itemize}
+\vspace{-16pt}
 %-----------EDUCATION-----------
 \section{Education}
   \resumeSubHeadingListStart
     \resumeSubheading
       {PhD in Computer Engineering}
-	  {2018 -- May 2024 (Anticipated)}
+	  {2018 -- September 2024 (Scheduled)}
       {The Bradley Department of Electrical and Computer Engineering at Virginia Tech}{Blacksburg, VA}
 	%   \textit{\underline{Advisor:}} Prof. Paul Plassmann \& Collegiate Professor Creed F. Jones \\
 		\vspace{-2ex}
@@ -53,19 +71,6 @@
 	%   \textit{\underline{Advisor:}} Prof. Hasan Ocak \\
 	  \textit{\underline{Thesis:}} Box Dimensioning System with Kinect Sensor
   \resumeSubHeadingListEnd
-
-%-----------PROGRAMMING SKILLS-----------
-\section{Technical \& Language Skills}
- \begin{itemize}[leftmargin=0.15in, label={}]
-    \small{\item{
-     \textbf{Languages:}{~Python, MATLAB, C, C++, HTML/CSS, JavaScript, PHP} \\
-	 \textbf{Frameworks:}{~Keras, Tensorflow, pytorch, OpenCV, numpy, scipy, scikit-learn, scikit-image, Flask, Jupyter, ROS, \LaTeX} \\
-     \textbf{Technologies:}{~Linux, Version Control, GitHub, GitLab, CI/CD, Test-driven Development, Unit Testing} \\
-	 \textbf{Language Proficiency:}{~Turkish (Native), English (Proficient), German (Novice)}
-    }}
- \end{itemize}
- \vspace{-16pt}
-
 %
 \section{Relevant Coursework}
 	\begin{multicols}{2}
@@ -111,31 +116,31 @@
 % 		\resumeSubheading{Full Academic Scholarship}{2015 -- Present}{The Ministry of National Education, Turkey}{}
 % 		\resumeSubheading{Motion and Control Days Robotics Competition}{2011}{Competition of Mechanical Engineering Chamber, Turkey}{$3^{rd}$ Place}
 %     \resumeSubHeadingListEnd
-\section{Achievements}
+\section{Relevant Projects}
     \vspace{-5pt}
     \resumeSubHeadingListStart
-		\resumeProjectHeading
-		{
-			\textbf{Mentorship Web Platform for School of Construction} \\
-			\qquad \small Supervisors: A Akanmu, J Iorio $|$ Sponsor: MLSoC DEI Committee
-		}
-		{}
-		\resumeItemListStart
-			\resumeItem{Developed a Web application (frontend + backend) to match mentees to mentors by considering mentree preferences and mentor expertise. The backend makes use of a RESTful interface to manipulate the data in consideration \& expose some features to the users while the frontend system that let's users \& administrator enter data into the backend system and organize information visually.}
-		\resumeItemListEnd
-		\vspace{-13pt}
-		\resumeProjectHeading
-		{
-			\textbf{Analysis of Operational Modes of Deployable Booms in Cube Satellites $|$ Ut ProSat - I} \\
-			\qquad \small Supervisors: J Black, L Harding $|$ \href{https://vsgc.odu.edu/virginiacubesatconstellation/}{\faBookmark~Website} $|$ Sponsor: Virginia Space Space@VT \& NASA
-		}
-		{}
-		\resumeItemListStart
-			\resumeItem{Contributed to the hardware selection and design process in the manufacturing of a cube satellite that is missioned to test deployers in lower-orbit space.}
-			\resumeItem{Compile the mission plan, provide premilinary analysis of data and power budget specifically with the selected components of the deployer mechanism.}
-			\resumeItem{Developed the necessary embedded software and test procedures required by the deployer subsystem.}
-		\resumeItemListEnd
-		\vspace{-13pt}
+		% \resumeProjectHeading
+		% {
+		% 	\textbf{Mentorship Web Platform for School of Construction} \\
+		% 	\qquad \small Supervisors: A Akanmu, J Iorio $|$ Sponsor: MLSoC DEI Committee
+		% }
+		% {}
+		% \resumeItemListStart
+		% 	\resumeItem{Developed a Web application (frontend + backend) to match mentees to mentors by considering mentee preferences and mentor expertise. The backend makes use of a RESTful interface to manipulate the data in consideration \& expose some features to the users while the frontend system that let's users \& administrator enter data into the backend system and organize information visually.}
+		% \resumeItemListEnd
+		% \vspace{-13pt}
+		% \resumeProjectHeading
+		% {
+		% 	\textbf{Analysis of Operational Modes of Deployable Booms in Cube Satellites $|$ Ut ProSat - I} \\
+		% 	\qquad \small Supervisors: J Black, L Harding $|$ \href{https://vsgc.odu.edu/virginiacubesatconstellation/}{\faBookmark~Website} $|$ Sponsor: Virginia Space Space@VT \& NASA
+		% }
+		% {}
+		% \resumeItemListStart
+		% 	\resumeItem{Contributed to the hardware selection and design process in the manufacturing of a cube satellite that is missioned to test deployers in lower-orbit space.}
+		% 	\resumeItem{Compile the mission plan, provide premilinary analysis of data and power budget specifically with the selected components of the deployer mechanism.}
+		% 	\resumeItem{Developed the necessary embedded software and test procedures required by the deployer subsystem.}
+		% \resumeItemListEnd
+		% \vspace{-13pt}
 
 		\resumeProjectHeading
 		{
@@ -144,11 +149,16 @@
 		}
 		{}
 		\resumeItemListStart
-			\resumeItem{Developed a robust algorithm that estimates heel-strike locations from the accelerometer measurements of a vibrating floor.}
-			\resumeItem{Developed a Computer Vision-based algorithm to localize heel-strike locations from images taken by a stereoscopic camera.}
-            \resumeItem{Developed a sensor fusion framework to incorporate the vibration- and vision-based heel-strike locations.}
-			\resumeItem{Developed a combined simulation environment that can generate the vibration and visual information necessary for the validation of the algorithms developed.}
-			\resumeItem{Quantified the efficacy and accuracy of implementations with simulations and controlled experiments.}
+			\resumeItem{Developed a multi-sensor localization framework that can determine the location of occupants from the measurements of a vibrating floor in the building.}
+			\resumeItem{Proposed a novel sensor fusion algorithm to discard ``byzantine'' sensors in the sensor network.}
+			\resumeItem{Proposed a novel vibration-based localization model that is the current the state-of-the art in the field.}
+			\resumeItem{Implemented a probabilistic framework to quantify the uncertainty in the localization results.}
+			\resumeItem{Validated the efficacy of the algorithm with controlled experiments and simulations.}
+			% \resumeItem{Developed a robust algorithm that estimates heel-strike locations from the accelerometer measurements of a vibrating floor.}
+			% \resumeItem{Developed a Computer Vision-based algorithm to localize heel-strike locations from images taken by a stereoscopic camera.}
+            % \resumeItem{Developed a sensor fusion framework to incorporate the vibration- and vision-based heel-strike locations.}
+			% \resumeItem{Developed a combined simulation environment that can generate the vibration and visual information necessary for the validation of the algorithms developed.}
+			% \resumeItem{Quantified the efficacy and accuracy of implementations with simulations and controlled experiments.}
           \resumeItemListEnd
 		\vspace{-13pt}
 		
@@ -176,17 +186,17 @@
 		\resumeItemListEnd 
 		\vspace{-13pt}
 
-		% \resumeProjectHeading
-		% {
-		% 	\textbf{Visual Localization of A Car During a Crash Test} \\
-		% 	\qquad \small Advisor: T Furukawa $|$ Sponsor: Honda Japan 
-		% }
-		% {}
-		% \resumeItemListStart
-		% 	\resumeItem{Designed and manufactured a sensor-suite that provides inertial measurements and images of a downward facing camera to localize a vehicle under the heavy vibrations during car-crash tests.}
-		% 	\resumeItem{Developed an efficient algorithm to localize the vehicle with a combinatoral method that is based on a featured-based localization, visual odometry technique and inertial measurements.}
-		% \resumeItemListEnd 
-		% \vspace{-13pt}
+		\resumeProjectHeading
+		{
+			\textbf{Visual Localization of A Car During a Crash Test} \\
+			\qquad \small Advisor: T Furukawa $|$ Sponsor: Honda Japan 
+		}
+		{}
+		\resumeItemListStart
+			\resumeItem{Designed and manufactured a sensor-suite that provides inertial measurements and images of a downward facing camera to localize a vehicle under the heavy vibrations during car-crash tests.}
+			\resumeItem{Developed an efficient algorithm to localize the vehicle with a combinatoral method that is based on a featured-based localization, visual odometry technique and inertial measurements.}
+		\resumeItemListEnd 
+		\vspace{-13pt}
 		
 		\resumeProjectHeading
 		{
