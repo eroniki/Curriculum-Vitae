@@ -3,6 +3,9 @@
 \usepackage{Ambarkutuk_Resume}
 
 \begin{document}
+% Publications kept: those relevant to perception / sensing / sensor fusion.
+% Dropped from the v1 list: guner2015meslek, guner2014distance, guner2013magnetic
+% (2013--2015 undergraduate mechatronics papers, one in Turkish).
 \nocite{ambarkutuk2024sensors}
 \nocite{ambarkutuk2023}
 \nocite{ambarkutuk2021uncertainty}
@@ -10,19 +13,17 @@
 \nocite{sa2020towards}
 \nocite{ambarkutuk2017grid}
 \nocite{ocak2015image}
-\nocite{guner2015meslek}
-\nocite{guner2014distance}
-\nocite{guner2013magnetic}
 
 \begin{center}
     {\Huge \scshape Murat Ambarkutuk} \\ \vspace{1pt}
-    % \faHome~402 Ellett Road, Blacksburg, VA 204060
-	% ~ \small \raisebox{-0.1\height}\faPhone\ 302-772-8419
+    % TODO: add a phone number and city/state here, e.g.
+    % \faPhone~XXX-XXX-XXXX ~ \faHome~City, ST
 	~ \href{mailto:murat@ambarkutuk.com}{\raisebox{-0.2\height}\faEnvelope\  \underline{murat@ambarkutuk.com}}
-	~ \href{https://murat.ambarkutuk.com}{\raisebox{-0.2\height}\faBookmark\  \underline{https://murat.ambarkutuk.com}} \\
+	~ \href{https://murat.ambarkutuk.com}{\raisebox{-0.2\height}\faBookmark\  \underline{murat.ambarkutuk.com}} \\
     ~ \href{https://linkedin.com/in/muratambarkutuk/}{\raisebox{-0.2\height}\faLinkedin\ \underline{muratambarkutuk}}
 	~ \href{https://github.com/eroniki}{\raisebox{-0.2\height}\faGithub\ \underline{eroniki}}
-	~ \href{https://code.vt.edu/murata}{\raisebox{-0.2\height}\faGitlab\ \underline{https://code.vt.edu/murata}}
+	% Removed: code.vt.edu GitLab link (likely needs a VT login, so recruiters cannot open it).
+	% ~ \href{https://code.vt.edu/murata}{\raisebox{-0.2\height}\faGitlab\ \underline{https://code.vt.edu/murata}}
 	\vspace{-8pt}
 \end{center}
 
@@ -30,36 +31,35 @@
 \section{Professional Experience}
   \resumeSubHeadingListStart
 
-    \resumeSubheading
-      {R$^2$ Robotics - RANPAK}{January 2025 -- Present}
-      {Principal Perception Engineer}{In Person}
+    % The two R^2 Robotics entries and the seven RANPAK items from the old Projects
+    % section are merged here so each piece of work appears once.
+    % TODO (biggest remaining win): add real numbers to the bullets below, e.g.
+    %   inference latency / fps and the hardware it runs on, detection/segmentation accuracy (mAP/IoU),
+    %   model-size or speed-up from distillation, packages per minute, number of cameras/sites, team size mentored.
+    % TODO: add the work location (city, state) -- v1's "In Person" carried no information.
+    \vspace{-2pt}\item
+      \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+        \textbf{R$^2$ Robotics - RANPAK} & \textbf{\small November 2024 -- Present} \\
+        \textit{\small Principal Perception Engineer} & \textit{\small January 2025 -- Present} \\
+        \textit{\small Sr. Perception Engineer} & \textit{\small November 2024 -- January 2025} \\
+      \end{tabular*}
       \resumeItemListStart
-		\resumeItem{Host engineering team meetings to coordinate cross-functional development efforts and align perception system objectives with product roadmap.}
-		\resumeItem{Mentor perception team members on advanced computer vision techniques, deep learning optimization, and production deployment best practices.}
-		\resumeItem{Architect the second-generation Decision Tower perception stack and features, including multi-camera 3D reconstruction, real-time object detection, TensorRT-optimized inference pipelines, CUDA-accelerated depth fusion, and TSDF voxel hashing for high-throughput packaging operations.}
+		\resumeItem{Architect the second-generation Decision Tower perception stack (full rewrite) for high-throughput packaging automation: multi-camera calibration and 3D reconstruction, YOLO-based real-time detection, TensorRT-accelerated inference, and neural scene representations.}
+		\resumeItem{Built a production TSDF fusion pipeline with voxel hashing in CUDA for large-scale 3D mapping (depth-only and depth+color, GPU-optimized memory access), together with a Depth Regularizer for winsorized multi-view depth fusion with polynomial-regression weighting and robust confidence filtering.}
+		\resumeItem{Built libinference, a header-only, cross-platform ONNX/TensorRT inference library with dynamic shapes, multi-GPU support, CUDA stream parallelism, and unified logging/configuration for seamless deployment across development and production environments.}
+		\resumeItem{Led model optimization: distilled DINOv3 features into lightweight YOLOv8 models for real-time, high-accuracy multi-class segmentation on embedded hardware; built a few-shot logo classifier (prototypical network on a frozen DINOv2 backbone) for brand and logo recognition.}
+		\resumeItem{Developed Quality Tower, a multi-class segmentation pipeline for on-line carton graphic validation and hazard-label inspection.}
+		\resumeItem{Host cross-functional engineering meetings to align perception objectives with the product roadmap, and mentor perception team members on computer vision, deep learning optimization, and production deployment.}
 	\resumeItemListEnd
 
     \resumeSubheading
-      {R$^2$ Robotics - RANPAK}{November 2024 -- January 2025}
-      {Sr. Perception Engineer}{In Person}
+      {Baykar Defense (TR) - Atlas Imaging (US)}{2018 -- 2020}
+      {Computer Vision Engineer}{Remote}
       \resumeItemListStart
-		\resumeItem{Led development and deployment of production-grade computer vision systems for industrial automation, including multi-camera 3D reconstruction, real-time object detection, and TensorRT-optimized inference pipelines.}
-		\resumeItem{Architected scalable perception frameworks with CUDA-accelerated depth fusion, TSDF voxel hashing, and neural scene representations for high-throughput packaging operations.}
-		\resumeItem{Spearheaded model optimization initiatives including knowledge distillation from DINOv3 to YOLOv8, achieving real-time performance on embedded hardware while maintaining high accuracy for multi-class segmentation tasks.}
-		\resumeItem{Developed complete perception stack for high-throughput packaging automation including multi-camera calibration, YOLO-based detection, and TensorRT-accelerated inference achieving real-time performance.}
-		\resumeItem{Implemented production-grade TSDF fusion pipeline with voxel hashing for large-scale 3D mapping, supporting both depth-only and depth+color reconstruction with GPU-optimized memory access patterns.}
-		\resumeItem{Built cross-platform TensorRT inference library (libinference) with dynamic shapes, multi-GPU support, CUDA stream parallelism, and unified configuration management for seamless deployment across development and production environments.}
-	\resumeItemListEnd
-
-    \resumeSubheading
-      {Baykar Defense (TR) - Atlas Imaging (US) }{2018 -- 2020}
-      {Computer Vision Engineer developing orthorechtified maps with aerial photos taken by on autonomous UAVs.}{Remote}
-      \resumeItemListStart
-		\resumeItem{Derived and actualize pose information (location+orientation) of an UAV and its components based on the distributed measurements of the Inertial Navigation System.
-					These measurements are then used to in an iterative Computer Vision algorithm to project the corners of the images to the ground while considering the elevation changes in the scene.}
-		\resumeItem{Developed a Sensor Fusion algorithm to correct results of the previous stages of the map-making algorithm with statistical representation.}
-		\resumeItem{Implemented Test-driven Development paradigm in the dev-team. On that front, generated tests to check coverage, style requirements, and performance \& accuracy of the developed algorithms.}
-		\resumeItem{Architected the CI/CD pipeline to automate the aforementioned tests and generated automated reports from the results of the tests.}
+		\resumeItem{Developed orthorectified maps from aerial photos taken by autonomous UAVs. Derived the pose (location and orientation) of the UAV and its components from distributed Inertial Navigation System measurements, then used it in an iterative computer vision algorithm that projects image corners onto the ground while accounting for elevation changes in the scene.}
+		\resumeItem{Developed a sensor fusion algorithm, with a statistical representation, to correct the results of the earlier stages of the map-making pipeline.}
+		\resumeItem{Introduced test-driven development to the team: wrote tests for coverage, style requirements, and the performance and accuracy of the algorithms.}
+		\resumeItem{Architected the CI/CD pipeline that runs these tests automatically and generates reports from the results.}
 	\resumeItemListEnd
 
     % \resumeSubheading
@@ -85,14 +85,14 @@
 		    \resumeItem{Paul E. Torgersen Research Excellence Award}
 	    	\resumeItem{The Outstanding Research Award and Fellowship from the Turkish Ministry of National Education}
 	    \resumeItemListEnd
-	  \textit{\underline{Dissertation:}} A Sensor Fusion Technique for Gait Analysis from Structural Vibration and Computer Vision 
+	  \textit{\underline{Dissertation:}} A Sensor Fusion Technique for Gait Analysis from Structural Vibration and Computer Vision
 	  \resumeSubheading
       {MS in Mechanical Engineering}
 	  {2015 -- 2018}
       {Mechanical Engineering at Virginia Tech}{Blacksburg, VA}
 	%   \textit{\underline{Advisor:}} Prof. Tomonari Furukawa \\
 	  \textit{\underline{Thesis:}} A Grid based Indoor Radiolocation Technique Based on Spatially Coherent Path Loss Model
-	  
+
 	  \resumeSubheading
       {BS in Mechatronics Engineering}
 	  {2008 -- 2013}
@@ -102,11 +102,15 @@
   \resumeSubHeadingListEnd
 
 %-----------PROGRAMMING SKILLS-----------
+% Changes vs v1: dropped PHP / HTML/CSS / JavaScript (not relevant to a perception role);
+% "DINOv2" -> "DINOv2/v3" to match the experience section.
+% TODO: ROS, COLMAP and 3D Gaussian Splatting have no supporting bullet anywhere -- either
+% add one (project or role) or remove them, since interviewers will ask.
 \section{Technical \& Language Skills}
  \begin{itemize}[leftmargin=0.15in, label={}]
     \small{\item{
-     \textbf{Languages:}{~Python, C++, C, CUDA, MATLAB, HTML/CSS, JavaScript, PHP} \\
-	 \textbf{ML/CV Frameworks:}{~PyTorch, TensorFlow, Keras, OpenCV, scikit-learn, scikit-image, YOLO, DINOv2} \\
+     \textbf{Languages:}{~Python, C++, C, CUDA, MATLAB} \\
+	 \textbf{ML/CV Frameworks:}{~PyTorch, TensorFlow, Keras, OpenCV, scikit-learn, scikit-image, YOLO, DINOv2/v3} \\
 	 \textbf{3D Vision \& Robotics:}{~COLMAP, Multi-view Geometry, TSDF Fusion, 3D Gaussian Splatting, ROS} \\
 	 \textbf{Deployment \& Optimization:}{~TensorRT, ONNX, CUDA Kernels, Quantization, Model Distillation} \\
      \textbf{Tools \& Technologies:}{~Linux, Git, GitHub, GitLab, CI/CD, Docker, \LaTeX} \\
@@ -115,106 +119,11 @@
  \end{itemize}
  \vspace{-16pt}
 
-%
-% \section{Coursework}
-% 	\begin{multicols}{2}
-% 		\begin{itemize}[itemsep=-5pt, parsep=3pt]
-% 			\item\small Robust Estimation \& Filtering
-% 			\item Computer Vision
-% 			\item Advanced Computer Vision
-% 			\item Advanced Machine Learning
-% 			\item Bayesian Robotics
-% 			\item Experimental Robotics
-% 			\item Exp. Methods \& Signal Processing
-% 			\item Advanced Robotics \& Automation
-% 		\end{itemize}
-% 	\end{multicols}
-% 	\vspace*{2.0\multicolsep}
-% \section{Honors, Achievements, Awards, \& Scholarships}
-%     \resumeSubHeadingListStart
-% 		\resumeSubheading{Full Academic Scholarship}{2015 -- Present}{The Ministry of National Education, Turkey}{}
-% 		\resumeSubheading{Motion and Control Days Robotics Competition}{2011}{Competition of Mechanical Engineering Chamber, Turkey}{$3^{rd}$ Place}
-%     \resumeSubHeadingListEnd
-\section{Projects}
+%-----------PROJECTS (academic / research)-----------
+% The seven R^2 Robotics/RANPAK project entries now live in the Experience section above.
+\section{Research Projects}
     \vspace{-5pt}
     \resumeSubHeadingListStart
-		\resumeProjectHeading
-		{
-			\textbf{Decision Tower 2.0} \\
-			\qquad \small R$^2$ Robotics/RANPAK
-		}
-		{2025}
-		\resumeItemListStart
-			\resumeItem{Full perception stack rewrite for high-throughput packaging automation; multi-camera calibration, YOLO-based detection, and TensorRT-accelerated inference.}
-		\resumeItemListEnd
-		\vspace{-13pt}
-
-		\resumeProjectHeading
-		{
-			\textbf{Quality Tower – Carton Graphic Validation \& Hazard Label Inspection} \\
-			\qquad \small R$^2$ Robotics/RANPAK
-		}
-		{2025}
-		\resumeItemListStart
-			\resumeItem{Multi-class segmentation pipeline for on-line carton graphic validation and hazard-label inspection in industrial settings.}
-		\resumeItemListEnd
-		\vspace{-13pt}
-
-		\resumeProjectHeading
-		{
-			\textbf{libinference – TensorRT Inference Library} \\
-			\qquad \small R$^2$ Robotics/RANPAK
-		}
-		{2024--2025}
-		\resumeItemListStart
-			\resumeItem{Header-only, cross-platform ONNX/TensorRT engine with dynamic shapes, multi-GPU support, CUDA stream parallelism, and unified logging/configuration.}
-		\resumeItemListEnd
-		\vspace{-13pt}
-
-		\resumeProjectHeading
-		{
-			\textbf{Depth Regularizer} \\
-			\qquad \small R$^2$ Robotics/RANPAK
-		}
-		{2024--2025}
-		\resumeItemListStart
-			\resumeItem{Winsorized multi-view depth fusion with polynomial regression weighting and robust confidence filtering; production-grade C++/CUDA implementation.}
-		\resumeItemListEnd
-		\vspace{-13pt}
-
-		\resumeProjectHeading
-		{
-			\textbf{TSDF Fusion with Voxel Hashing (CUDA)} \\
-			\qquad \small R$^2$ Robotics/RANPAK
-		}
-		{2024--2025}
-		\resumeItemListStart
-			\resumeItem{Real-time TSDF integration using voxel hashing; supports depth-only and depth+color fusion with GPU-optimized memory access for large-scale mapping.}
-		\resumeItemListEnd
-		\vspace{-13pt}
-
-		\resumeProjectHeading
-		{
-			\textbf{Few-Shot Logo Classification with DINOv2} \\
-			\qquad \small R$^2$ Robotics/RANPAK
-		}
-		{2025}
-		\resumeItemListStart
-			\resumeItem{Prototypical-network architecture using a frozen DINOv2 backbone and raster logo support sets for robust industrial brand and logo recognition.}
-		\resumeItemListEnd
-		\vspace{-13pt}
-
-		\resumeProjectHeading
-		{
-			\textbf{Knowledge Distillation – DINOv3 to YOLOv8} \\
-			\qquad \small R$^2$ Robotics/RANPAK
-		}
-		{2025}
-		\resumeItemListStart
-			\resumeItem{Distilling high-capacity DINOv3 features into lightweight YOLOv8 models to achieve real-time, high-accuracy detection and segmentation on embedded hardware.}
-		\resumeItemListEnd
-		\vspace{-13pt}
-
 		\resumeProjectHeading
 		{
 			\textbf{Sensor Fusion for Occupant Localization in Smart Buildings} \\
@@ -223,10 +132,10 @@
 		{2018--2024}
 		\resumeItemListStart
 			\resumeItem{Developed a robust algorithm that estimates heel-strike locations from the accelerometer measurements of a vibrating floor.}
-			\resumeItem{Developed a Computer Vision-based algorithm to localize heel-strike locations from images taken by a stereoscopic camera.}
-            \resumeItem{Developed a sensor fusion framework to incorporate the vibration- and vision-based heel-strike locations.}
-			\resumeItem{Developed a combined simulation environment that can generate the vibration and visual information necessary for the validation of the algorithms developed.}
-			\resumeItem{Quantified the efficacy and accuracy of implementations with simulations and controlled experiments.}
+			\resumeItem{Built a computer vision algorithm that localizes heel-strike locations from stereoscopic camera images.}
+            \resumeItem{Designed a sensor fusion framework that combines the vibration- and vision-based heel-strike locations.}
+			\resumeItem{Created a combined simulation environment that generates the vibration and visual data needed to validate the algorithms.}
+			\resumeItem{Quantified the efficacy and accuracy of the implementations with simulations and controlled experiments.}
           \resumeItemListEnd
 		\vspace{-13pt}
 
@@ -237,8 +146,8 @@
 		}
 		{2018}
 		\resumeItemListStart
-		\resumeItem{Designed a sensor-suite (frontend + backend), a multiple-view camera-based system, for a smart classroom to quantify the collaboration among students. The backend creates many functionalities of the suite, i.e., controlling the sensor-suite, scheduling auto-start/stop times as well as employing automated Computer Vision techniques on the collected data. The frontend, on the other hand, exposes the functionality of the backend to remotely control and monitor the system.}
-		\resumeItemListEnd 
+		\resumeItem{Designed a multiple-view, camera-based sensor suite (frontend + backend) that quantifies collaboration among students in a smart classroom. The backend controls the sensors, schedules automatic start/stop times, and applies automated computer vision techniques to the collected data; the frontend exposes remote control and monitoring of the system.}
+		\resumeItemListEnd
 		\vspace{-13pt}
 
 		\resumeProjectHeading
@@ -248,10 +157,10 @@
 		}
 		{2016--2017}
 		\resumeItemListStart
-			\resumeItem{Derived a probablistic framework of a passive radio-localization technique under multipath propagation that can determine the location of different entities, namely, occupants, robots, and invenvorty, in indoor enviroments.}
-			\resumeItem{Developed the localization algorithm based on the probablistic framework.}
-			\resumeItem{Validated the efficacy of the algorithm with controlled experiments whose results were presented at IEEE RAS conference.}
-		\resumeItemListEnd 
+			\resumeItem{Derived a probabilistic framework for passive radio localization under multipath propagation that determines the location of occupants, robots, and inventory in indoor environments.}
+			\resumeItem{Developed the localization algorithm based on the probabilistic framework.}
+			\resumeItem{Validated the algorithm with controlled experiments whose results were presented at an IEEE RAS conference.}
+		\resumeItemListEnd
     \resumeSubHeadingListEnd
 	\vspace{-15pt}
 
@@ -260,41 +169,10 @@
 	\footnotesize
 	\bibliography{refs}
 }
-% \vspace{-12pt}
 
 %-----------INVOLVEMENT---------------
+% Compressed from a four-item two-column block (no dates) into one line.
 \section{Community Service \& Leadership}
-	\vspace{-15pt}
-	\resumeSubHeadingListStart
-		\begin{multicols}{2}
-			\resumeSubheading{Graduate Student Ambassador}{}{The Bradley Department of Electrical and Computer Eng.}{} \vspace{-20pt}
-			\resumeSubheading{Society of Experimental Mechanics}{}{Student Member}{} \vspace{-20pt}
-			\resumeSubheading{IEEE Robotics and Automation Society}{}{Student Member \& Reviewer}{} \vspace{-20pt}
-			\resumeSubheading{Turkish Student Assoc. at Virginia Tech}{}{Secretary}{} \vspace{-20pt}
-			% \resumeSubheading{}{}{Scrum Master}{} \vspace{-20pt}
-		\end{multicols} \vspace{-8pt}
-			% \resumeSubheading{Scrum Master}{}{Vibrations, Adaptive Structures, and Testing Laboratory, at Virginia Tech}{}
-
-		% \resumeItemListStart
-		% 	\resumeItem{Reviewed academic submissions International Conference on Multisensor Fusion and Integration for Intelligent Systems on various years.}
-		% \resumeItemListEnd
-        % \resumeSubheading{Turkish Student Assoc. at Virginia Tech}{Spring 2020 -- Present}{Secretary}{Virginia Tech}
-        %     \resumeItemListStart
-		% 		\resumeItem{Collaborated with a team of volunteers to re-establish the RSO.}
-		% 		\resumeItem{Developed chapters of the RSO constitution.}
-		% 		\resumeItem{Organized events to promote and introduce Turkish culture and language at Virginia Tech.}
- 		% 		\resumeItem{Provided mentoring and support to the Turkish students acclimate them to the culture in the US.}
-        %     \resumeItemListEnd
-    \resumeSubHeadingListEnd
-\vspace{-18pt}
-
-% \section{Interests}
-% \begin{multicols}{3}
-% 		\begin{itemize}[itemsep=-5pt, parsep=3pt]
-% 			\item \small Analog Photography
-% 			\item \small Running
-% 			\item \small Gardening
-% 		\end{itemize}
-% 	\end{multicols}
-	% \vspace*{2.0\multicolsep}
+	\vspace{-3pt}
+	{\small Graduate Student Ambassador, ECE at Virginia Tech~$\cdot$ Student Member \& Reviewer, IEEE Robotics and Automation Society~$\cdot$ Student Member, Society of Experimental Mechanics~$\cdot$ Secretary, Turkish Student Association at Virginia Tech}
 \end{document}
