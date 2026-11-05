@@ -51,7 +51,7 @@
 		% \resumeItem{Built a production TSDF fusion pipeline with voxel hashing in CUDA for large-scale 3D mapping (depth-only and depth+color, GPU-optimized memory access), together with a Depth Regularizer for winsorized multi-view depth fusion with polynomial-regression weighting and robust confidence filtering.}
 		\resumeItem{Built libinference, a header-only, cross-platform ONNX/TensorRT inference library with dynamic shapes, multi-GPU support, CUDA stream parallelism, and unified logging/configuration.}
 		\resumeItem{Build the MLOps stack that provides the ML lifecycle: MLflow, a private S3-backed APT repository with release and dev channels, and the full maintenance and release ceremonies of libinference.}
-		\resumeItem{Led model optimization: distilled DINOv3 features into lightweight YOLOv8 models for real-time, high-accuracy multi-class segmentation on embedded hardware.}
+		\resumeItem{Led model optimization: knowledge distillation to compress models (DINOv3 features into lightweight YOLOv8 for real-time, high-accuracy multi-class segmentation on embedded hardware) and pruning for efficient inference.}
 		% Commented out (few-shot logo classifier), append to the bullet above to restore:
 		% "; built a few-shot logo classifier (prototypical network on a frozen DINOv2 backbone) for brand and logo recognition"
 		\resumeItem{Built synthetic data generation pipelines with NVIDIA Isaac Sim and a Blender-based native generator to produce simulated data for the perception models.}
@@ -116,10 +116,10 @@
  \begin{itemize}[leftmargin=0.15in, label={}]
     \small{\item{
      \textbf{Languages:}{~Python, C++, C, CUDA, MATLAB} \\
-	 \textbf{ML/CV:}{~PyTorch, TensorFlow, Keras, OpenCV, scikit-learn, scikit-image, YOLO, DINOv2/v3, ViT, ConvNeXt} \\
+	 \textbf{ML/CV:}{~PyTorch, TensorFlow, Keras, OpenCV, scikit-learn, scikit-image, YOLO, DINOv3, ViT, ConvNeXt} \\
 	 \textbf{3D Vision \& Robotics:}{~COLMAP, Multi-view Geometry, TSDF Fusion, 3D Gaussian Splatting, ROS} \\
 	 \textbf{Simulation \& NVIDIA Stack:}{~Isaac Sim (Omniverse), Jetson, Blender, Synthetic Data Generation, CUDA, TensorRT} \\
-	 \textbf{Deployment, Optimization \& MLOps:}{~ONNX, MLflow, CUDA Kernels, Quantization, Model Distillation} \\
+	 \textbf{Deployment, Optimization \& MLOps:}{~ONNX, MLflow, CUDA Kernels, Quantization, Pruning, Model Distillation} \\
      \textbf{Tools \& Technologies:}{~Linux (amd64, arm64), APT, AWS S3, Git, GitHub, GitLab, CI/CD, Docker, \LaTeX} \\
 	 \textbf{Language Proficiency:}{~Turkish (Native), English (Proficient), German (Novice)}
     }}
