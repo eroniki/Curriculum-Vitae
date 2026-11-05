@@ -1,0 +1,175 @@
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{Ambarkutuk_Resume}
+
+\begin{document}
+% Publications kept: those relevant to perception / sensing / sensor fusion.
+% Dropped from the v1 list: guner2015meslek, guner2014distance, guner2013magnetic
+% (2013--2015 undergraduate mechatronics papers, one in Turkish).
+\nocite{ambarkutuk2024sensors}
+\nocite{ambarkutuk2023}
+\nocite{ambarkutuk2021uncertainty}
+\nocite{sa2021investigation}
+\nocite{sa2020towards}
+\nocite{ambarkutuk2017grid}
+\nocite{ocak2015image}
+
+\begin{center}
+    {\Huge \scshape Murat Ambarkutuk} \\ \vspace{1pt}
+    % TODO: add a phone number and city/state here, e.g.
+    % \faPhone~XXX-XXX-XXXX ~ \faHome~City, ST
+	~ \href{mailto:murat@ambarkutuk.com}{\raisebox{-0.2\height}\faEnvelope\  \underline{murat@ambarkutuk.com}}
+	~ \href{https://murat.ambarkutuk.com}{\raisebox{-0.2\height}\faBookmark\  \underline{murat.ambarkutuk.com}} \\
+    ~ \href{https://linkedin.com/in/muratambarkutuk/}{\raisebox{-0.2\height}\faLinkedin\ \underline{muratambarkutuk}}
+	~ \href{https://github.com/eroniki}{\raisebox{-0.2\height}\faGithub\ \underline{eroniki}}
+	% Removed: code.vt.edu GitLab link (likely needs a VT login, so recruiters cannot open it).
+	% ~ \href{https://code.vt.edu/murata}{\raisebox{-0.2\height}\faGitlab\ \underline{https://code.vt.edu/murata}}
+	\vspace{-8pt}
+\end{center}
+
+%-----------EXPERIENCE-----------
+\section{Professional Experience}
+  \resumeSubHeadingListStart
+
+    % The two R^2 Robotics entries and the seven RANPAK items from the old Projects
+    % section are merged here so each piece of work appears once.
+    % TODO (biggest remaining win): add real numbers to the bullets below, e.g.
+    %   inference latency / fps and the hardware it runs on, detection/segmentation accuracy (mAP/IoU),
+    %   model-size or speed-up from distillation, packages per minute, number of cameras/sites, team size mentored.
+    % TODO: replace "In Person" with city, state.
+    \resumeSubheading
+      {R$^2$ Robotics - RANPAK}{November 2024 -- Present}
+      {Principal Perception Engineer (Jan 2025 -- Present) $\cdot$ Sr. Perception Engineer (Nov 2024 -- Jan 2025)}{In Person}
+      \resumeItemListStart
+		\resumeItem{Architect the second-generation Decision Tower perception stack (full rewrite) for high-throughput packaging automation: multi-camera calibration and 3D reconstruction, YOLO-based real-time detection, and TensorRT-accelerated inference.}
+		\resumeItem{Built a production TSDF fusion pipeline with voxel hashing in CUDA for large-scale 3D mapping (depth-only and depth+color, GPU-optimized memory access), together with a Depth Regularizer for winsorized multi-view depth fusion with polynomial-regression weighting and robust confidence filtering.}
+		\resumeItem{Built libinference, a header-only, cross-platform ONNX/TensorRT inference library with dynamic shapes, multi-GPU support, CUDA stream parallelism, and unified logging/configuration for seamless deployment across development and production environments.}
+		\resumeItem{Led model optimization: distilled DINOv3 features into lightweight YOLOv8 models for real-time, high-accuracy multi-class segmentation on embedded hardware; built a few-shot logo classifier (prototypical network on a frozen DINOv2 backbone) for brand and logo recognition.}
+		\resumeItem{Developed Quality Tower, a multi-class segmentation pipeline for on-line carton graphic validation and hazard-label inspection.}
+		\resumeItem{Host cross-functional engineering meetings to align perception objectives with the product roadmap, and mentor perception team members on computer vision, deep learning optimization, and production deployment.}
+	\resumeItemListEnd
+
+    \resumeSubheading
+      {Baykar Defense (TR) - Atlas Imaging (US)}{2018 -- 2020}
+      {Computer Vision Engineer}{Remote}
+      \resumeItemListStart
+		\resumeItem{Developed orthorectified maps from aerial photos taken by autonomous UAVs. Derived the pose (location and orientation) of the UAV and its components from distributed Inertial Navigation System measurements, then used it in an iterative computer vision algorithm that projects image corners onto the ground while accounting for elevation changes in the scene.}
+		\resumeItem{Developed a sensor fusion algorithm, with a statistical representation, to correct the results of the earlier stages of the map-making pipeline.}
+		\resumeItem{Introduced test-driven development to the team: wrote tests for coverage, style requirements, and the performance and accuracy of the algorithms.}
+		\resumeItem{Architected the CI/CD pipeline that runs these tests automatically and generates reports from the results.}
+	\resumeItemListEnd
+
+    % \resumeSubheading
+    %   {Robotik Maden R\&D Automation LLC}{2013-2015}
+    %   {Embedded Software Engineer}{Kocaeli, Turkey}
+    %   \resumeItemListStart
+    %     \resumeItem{Developed wireless sensor nodes to monitor critical environmental variables in a coal mine.}
+	% 	\resumeItem{Developed a backend structure to move the real-time measurements from the wireless nodes to the cloud.}
+	% \resumeItemListEnd
+  \resumeSubHeadingListEnd
+\vspace{-16pt}
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {PhD in Computer Engineering}
+	  {2018 -- 2024}
+      {The Bradley Department of Electrical and Computer Engineering at Virginia Tech}{Blacksburg, VA}
+	%   \textit{\underline{Advisor:}} Prof. Paul Plassmann \& Collegiate Professor Creed F. Jones \\
+		\vspace{-2ex}
+		\resumeItemListStart
+		    \resumeItem{Paul E. Torgersen Research Excellence Award}
+	    	\resumeItem{The Outstanding Research Award and Fellowship from the Turkish Ministry of National Education}
+	    \resumeItemListEnd
+	  \textit{\underline{Dissertation:}} A Sensor Fusion Technique for Gait Analysis from Structural Vibration and Computer Vision
+	  \resumeSubheading
+      {MS in Mechanical Engineering}
+	  {2015 -- 2018}
+      {Mechanical Engineering at Virginia Tech}{Blacksburg, VA}
+	%   \textit{\underline{Advisor:}} Prof. Tomonari Furukawa \\
+	  \textit{\underline{Thesis:}} A Grid based Indoor Radiolocation Technique Based on Spatially Coherent Path Loss Model
+
+	  \resumeSubheading
+      {BS in Mechatronics Engineering}
+	  {2008 -- 2013}
+      {Mechatronics Engineering Department at Kocaeli University}{Kocaeli, Turkey}
+	%   \textit{\underline{Advisor:}} Prof. Hasan Ocak \\
+	  \textit{\underline{Thesis:}} Box Dimensioning System with Kinect Sensor
+  \resumeSubHeadingListEnd
+
+%-----------PROGRAMMING SKILLS-----------
+% Changes vs v1: dropped PHP / HTML/CSS / JavaScript (not relevant to a perception role);
+% "DINOv2" -> "DINOv2/v3" to match the experience section.
+% TODO: ROS, COLMAP and 3D Gaussian Splatting have no supporting bullet anywhere -- either
+% add one (project or role) or remove them, since interviewers will ask.
+\section{Technical \& Language Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages:}{~Python, C++, C, CUDA, MATLAB} \\
+	 \textbf{ML/CV Frameworks:}{~PyTorch, TensorFlow, Keras, OpenCV, scikit-learn, scikit-image, YOLO, DINOv2/v3} \\
+	 \textbf{3D Vision \& Robotics:}{~COLMAP, Multi-view Geometry, TSDF Fusion, 3D Gaussian Splatting, ROS} \\
+	 \textbf{Deployment \& Optimization:}{~TensorRT, ONNX, CUDA Kernels, Quantization, Model Distillation} \\
+     \textbf{Tools \& Technologies:}{~Linux, Git, GitHub, GitLab, CI/CD, Docker, \LaTeX} \\
+	 \textbf{Language Proficiency:}{~Turkish (Native), English (Proficient), German (Novice)}
+    }}
+ \end{itemize}
+ \vspace{-16pt}
+
+%-----------PROJECTS (academic / research)-----------
+% The seven R^2 Robotics/RANPAK project entries now live in the Experience section above.
+\section{Research Projects}
+    \vspace{-5pt}
+    \resumeSubHeadingListStart
+		\resumeProjectHeading
+		{
+			\textbf{Sensor Fusion for Occupant Localization in Smart Buildings} \\
+			\qquad \small Advisors: P Plassmann, CF Jones $|$ Related publications: \cite{ambarkutuk2024sensors,ambarkutuk2023,ambarkutuk2021uncertainty,sa2021investigation,sa2020towards}
+		}
+		{2018--2024}
+		\resumeItemListStart
+			\resumeItem{Developed a robust algorithm that estimates heel-strike locations from the accelerometer measurements of a vibrating floor.}
+			\resumeItem{Built a computer vision algorithm that localizes heel-strike locations from stereoscopic camera images.}
+            \resumeItem{Designed a sensor fusion framework that combines the vibration- and vision-based heel-strike locations.}
+			\resumeItem{Created a combined simulation environment that generates the vibration and visual data needed to validate the algorithms.}
+			\resumeItem{Quantified the efficacy and accuracy of the implementations with simulations and controlled experiments.}
+          \resumeItemListEnd
+		\vspace{-13pt}
+
+		\resumeProjectHeading
+		{
+			\textbf{Quantification of Collaboration and Communication among Students in a Smart Classroom} \\
+			\qquad \small Advisors: T Baird, PA Tarazaga $|$ \href{https://vtx.vt.edu/articles/2018/05/icat-steelcaseaward.html}{\faBookmark~News Article}
+		}
+		{2018}
+		\resumeItemListStart
+		\resumeItem{Designed a multiple-view, camera-based sensor suite (frontend + backend) that quantifies collaboration among students in a smart classroom. The backend controls the sensors, schedules automatic start/stop times, and applies automated computer vision techniques to the collected data; the frontend exposes remote control and monitoring of the system.}
+		\resumeItemListEnd
+		\vspace{-13pt}
+
+		\resumeProjectHeading
+		{
+		\textbf{A Grid-based Indoor Radiolocation Technique based on Spatially Coherent Path Loss Model} \\
+			\qquad \small Advisor: T Furukawa $|$ Publications: \cite{ambarkutuk2017grid}
+		}
+		{2016--2017}
+		\resumeItemListStart
+			\resumeItem{Derived a probabilistic framework for passive radio localization under multipath propagation that determines the location of occupants, robots, and inventory in indoor environments.}
+			\resumeItem{Developed the localization algorithm based on the probabilistic framework.}
+			\resumeItem{Validated the algorithm with controlled experiments whose results were presented at an IEEE RAS conference.}
+		\resumeItemListEnd
+    \resumeSubHeadingListEnd
+	\vspace{-15pt}
+
+\bibliographystyle{abbrvnat}
+{
+	\footnotesize
+	\bibliography{refs}
+}
+
+%-----------INVOLVEMENT---------------
+% Compressed from a four-item two-column block (no dates) into one line.
+\section{Community Service \& Leadership}
+	\vspace{-3pt}
+	{\small Graduate Student Ambassador, ECE at Virginia Tech $\cdot$ Student Member \& Reviewer, IEEE Robotics and Automation Society $\cdot$ Student Member, Society of Experimental Mechanics $\cdot$ Secretary, Turkish Student Association at Virginia Tech}
+\end{document}
