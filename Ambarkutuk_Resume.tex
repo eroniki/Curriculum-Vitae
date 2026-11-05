@@ -47,7 +47,9 @@
 		\resumeItem{Architect the second-generation Decision Tower perception stack (full rewrite) for high-throughput packaging automation: multi-camera calibration and 3D reconstruction, YOLO-based real-time detection, TensorRT-accelerated inference, and neural scene representations.}
 		\resumeItem{Built a production TSDF fusion pipeline with voxel hashing in CUDA for large-scale 3D mapping (depth-only and depth+color, GPU-optimized memory access), together with a Depth Regularizer for winsorized multi-view depth fusion with polynomial-regression weighting and robust confidence filtering.}
 		\resumeItem{Built libinference, a header-only, cross-platform ONNX/TensorRT inference library with dynamic shapes, multi-GPU support, CUDA stream parallelism, and unified logging/configuration for seamless deployment across development and production environments.}
+		\resumeItem{Maintain the release and dev channels of a private, S3-backed APT repository used to distribute software packages.}
 		\resumeItem{Led model optimization: distilled DINOv3 features into lightweight YOLOv8 models for real-time, high-accuracy multi-class segmentation on embedded hardware; built a few-shot logo classifier (prototypical network on a frozen DINOv2 backbone) for brand and logo recognition.}
+		\resumeItem{Built synthetic data generation pipelines with NVIDIA Isaac Sim and a Blender-based native generator to produce simulated data for the perception models.}
 		\resumeItem{Developed Quality Tower, a multi-class segmentation pipeline for on-line carton graphic validation and hazard-label inspection.}
 		\resumeItem{Host cross-functional engineering meetings to align perception objectives with the product roadmap, and mentor perception team members on computer vision, deep learning optimization, and production deployment.}
 	\resumeItemListEnd
@@ -106,17 +108,15 @@
 % "DINOv2" -> "DINOv2/v3" to match the experience section.
 % TODO: ROS, COLMAP and 3D Gaussian Splatting have no supporting bullet anywhere -- either
 % add one (project or role) or remove them, since interviewers will ask.
-% TODO: Isaac Sim also has no supporting bullet. Once you confirm how it was used (synthetic data
-% for training, simulating the packaging cell, sim-to-real, ...), add one to the RANPAK entry.
 \section{Technical \& Language Skills}
  \begin{itemize}[leftmargin=0.15in, label={}]
     \small{\item{
      \textbf{Languages:}{~Python, C++, C, CUDA, MATLAB} \\
 	 \textbf{ML/CV Frameworks:}{~PyTorch, TensorFlow, Keras, OpenCV, scikit-learn, scikit-image, YOLO, DINOv2/v3} \\
 	 \textbf{3D Vision \& Robotics:}{~COLMAP, Multi-view Geometry, TSDF Fusion, 3D Gaussian Splatting, ROS} \\
-	 \textbf{NVIDIA Stack:}{~Isaac Sim (Omniverse), CUDA, TensorRT} \\
+	 \textbf{Simulation \& NVIDIA Stack:}{~Isaac Sim (Omniverse), Blender, Synthetic Data Generation, CUDA, TensorRT} \\
 	 \textbf{Deployment, Optimization \& MLOps:}{~ONNX, MLflow, CUDA Kernels, Quantization, Model Distillation} \\
-     \textbf{Tools \& Technologies:}{~Linux, APT, Git, GitHub, GitLab, CI/CD, Docker, \LaTeX} \\
+     \textbf{Tools \& Technologies:}{~Linux, APT, AWS S3, Git, GitHub, GitLab, CI/CD, Docker, \LaTeX} \\
 	 \textbf{Language Proficiency:}{~Turkish (Native), English (Proficient), German (Novice)}
     }}
  \end{itemize}
