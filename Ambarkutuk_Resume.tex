@@ -44,17 +44,19 @@
       \end{tabular*}
       \resumeItemListStart
 		\resumeItem{Own the machine learning and perception stack end to end, from development through runtime, across Linux amd64 and arm64 platforms, including NVIDIA Jetson (CUDA, TensorRT).}
-		\resumeItem{Pretrained a shared backbone on standard ViT and ConvNeXt architectures and defined the downstream contracts that let independent task heads solve many perception problems from one backbone.}
+		\resumeItem{Built r2-bb, our model-training path: pretrained ViT and ConvNeXt V2 backbones, froze them, and defined the downstream contracts that let independent task heads train on them and solve many perception problems.}
+		% TODO: add the measured gain from amortized inference (you said it is measurable), e.g. latency or
+		% throughput vs. one model per task on the target Jetson hardware. Then drop this comment.
 		\resumeItem{Amortized inference across the heads on this backbone, enabling edge-level optimizations at industrial scale. Heads include a fine-tuned and deployed multi-head classifier and a heatmap-based keypoint estimator.}
 		\resumeItem{Architect the second-generation Decision Tower stack (full rewrite) for high-throughput packaging automation on the same backbone, with multi-camera calibration, 3D reconstruction, and neural scene representations.}
 		% \resumeItem{Built a production TSDF fusion pipeline with voxel hashing in CUDA for large-scale 3D mapping (depth-only and depth+color, GPU-optimized memory access), together with a Depth Regularizer for winsorized multi-view depth fusion with polynomial-regression weighting and robust confidence filtering.}
-		\resumeItem{Built libinference, a header-only, cross-platform ONNX/TensorRT inference library with dynamic shapes, multi-GPU support, CUDA stream parallelism, and unified logging/configuration.}
+		\resumeItem{Built libinference, the inference path: a header-only, cross-platform ONNX/TensorRT inference library with dynamic shapes, multi-GPU support, CUDA stream parallelism, and unified logging/configuration.}
 		\resumeItem{Build the MLOps stack that provides the ML lifecycle: MLflow, a private S3-backed APT repository with release and dev channels, and the full maintenance and release ceremonies of libinference.}
-		\resumeItem{Led model optimization: knowledge distillation to compress models (DINOv3 features into lightweight YOLOv8 for real-time, high-accuracy multi-class segmentation on embedded hardware) and pruning for efficient inference.}
+		\resumeItem{Led model optimization: knowledge distillation to compress models, from an in-house pretrained teacher to an in-house pretrained student (teacher swappable for any ViT- or ConvNeXt V2-based encoder) and pruning for efficient inference.}
 		% Commented out (few-shot logo classifier), append to the bullet above to restore:
 		% "; built a few-shot logo classifier (prototypical network on a frozen DINOv2 backbone) for brand and logo recognition"
 		\resumeItem{Built synthetic data generation pipelines with NVIDIA Isaac Sim and a Blender-based native generator to produce simulated data for the perception models.}
-		\resumeItem{Own the project board: divide products into MVPs, develop technical plans, and execute them by applying agile with a lean, heavily agentic team and a demo-every-week mentality.}
+		\resumeItem{Own the project board: divide products into MVPs, develop technical plans, and execute them by applying agile with a lean, heavily agentic team of six and a demo-every-week mentality.}
 		\resumeItem{Host cross-functional engineering meetings to align with the product roadmap, and mentor team members on computer vision, deep learning optimization, and production deployment.}
 	\resumeItemListEnd
 
@@ -116,7 +118,7 @@
  \begin{itemize}[leftmargin=0.15in, label={}]
     \small{\item{
      \textbf{Languages:}{~Python, C++, C, CUDA, MATLAB} \\
-	 \textbf{ML/CV:}{~PyTorch, TensorFlow, Keras, OpenCV, scikit-learn, scikit-image, YOLO, DINOv3, ViT, ConvNeXt} \\
+	 \textbf{ML/CV:}{~PyTorch, TensorFlow, Keras, OpenCV, scikit-learn, scikit-image, YOLO, DINOv3, ViT, ConvNeXt V2} \\
 	 \textbf{3D Vision \& Robotics:}{~COLMAP, Multi-view Geometry, TSDF Fusion, 3D Gaussian Splatting, ROS} \\
 	 \textbf{Simulation \& NVIDIA Stack:}{~Isaac Sim (Omniverse), Jetson, Blender, Synthetic Data Generation, CUDA, TensorRT} \\
 	 \textbf{Deployment, Optimization \& MLOps:}{~ONNX, MLflow, CUDA Kernels, Quantization, Pruning, Model Distillation} \\
