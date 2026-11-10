@@ -47,3 +47,4 @@
 *.png
 template/
 bibtex/
+*.fls
