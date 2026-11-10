@@ -62,8 +62,16 @@
 			% Commented out (few-shot logo classifier). To restore, add as a child above: Built a few-shot logo classifier
 			% (prototypical network on a frozen DINOv2 backbone) for brand and logo recognition.
 		\resumeNestedListEnd
-		\resumeItem{Architect Decision Tower 2.0 (full rewrite) for high-throughput packaging automation on the same backbone: multi-camera calibration, 3D reconstruction, and neural scene representations.}
-		% METRIC: throughput (packages per minute), cameras or sites, accuracy.
+		\resumeItem{Architect Decision Tower 2.0 (full rewrite) for high-throughput packaging automation on the same backbone.}
+		% METRIC (parent): throughput (packages per minute), cameras or sites, overall accuracy.
+		\resumeNestedListStart
+			\resumeItem{Built multi-camera calibration.}
+			% METRIC: reprojection error, calibration time, number of cameras.
+			\resumeItem{Built multi-camera 3D reconstruction.}
+			% METRIC: reconstruction accuracy, latency or fps, hardware it runs on.
+			\resumeItem{Added neural scene representations.}
+			% METRIC: what it improved (quality, speed, coverage) and by how much.
+		\resumeNestedListEnd
 		\resumeItem{Build the MLOps stack that provides the ML lifecycle: MLflow, a private S3-backed APT repository with release and dev channels, and the full maintenance and release ceremonies of libinference.}
 		% METRIC: release cadence, channels or packages served, number of consumers.
 		\resumeItem{Own the project board: divide products into MVPs, develop technical plans, and execute them by applying agile with a lean, heavily agentic team of six and a demo-every-week mentality.}
