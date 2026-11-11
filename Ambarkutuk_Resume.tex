@@ -53,7 +53,7 @@
 		\resumeNestedListStart
 			\resumeItem{Built r2-bb, the training path: pretrained and froze ViT and ConvNeXt V2 backbones in-house\M{pretrain-images}{ (\N{pretrain-images} images)} and defined the contracts that let independent task heads share one backbone pass, amortizing edge inference at industrial scale\M{amort-sep-ms,amort-shared-ms,amort-k}{, cutting p50 latency from \N{amort-sep-ms}\,ms to \N{amort-shared-ms}\,ms for \N{amort-k} heads on Orin Nano}\M{amort-mem-pct,amort-energy-pct}{, with \N{amort-mem-pct}\% less memory and \N{amort-energy-pct}\% less energy per frame}.}
 			\resumeItem{Built libinference, the inference path: a header-only ONNX/TensorRT library for Linux amd64/arm64 and Jetson (Nano, Orin~Nano, NX) with dynamic shapes, multi-GPU support, and CUDA stream parallelism\M{fleet-devices,fleet-sites}{, running on \N{fleet-devices} devices across \N{fleet-sites} sites}\M{libinf-overhead,libinf-load-s}{, with \N{libinf-overhead}\% overhead over raw TensorRT and \N{libinf-load-s}\,s engine load on Orin Nano}.}
-			\resumeItem{Compressed models with pruning and knowledge distillation from in-house or foundation-encoder teachers\M{comp-size-x,comp-speed-x,comp-acc-pt}{ (\N{comp-size-x}$\times$ smaller, \N{comp-speed-x}$\times$ faster, \N{comp-acc-pt}\,pt accuracy cost)}.}
+			\resumeItem{Optimized models with automatic mixed precision (AMP), pruning-aware training (PAT), post-training quantization (PTQ), and knowledge distillation from in-house or foundation-encoder teachers\M{comp-size-x,comp-speed-x,comp-acc-pt}{ (\N{comp-size-x}$\times$ smaller, \N{comp-speed-x}$\times$ faster, \N{comp-acc-pt}\,pt accuracy cost)}.}
 			\resumeItem{Built synthetic data generation pipelines with NVIDIA Isaac Sim and a Blender-based native generator\M{synth-images,synth-lift}{, \N{synth-images}k images lifting held-out real accuracy \N{synth-lift}\,pt}.}
 			% \resumeItem{Built a production TSDF fusion pipeline with voxel hashing in CUDA for large-scale 3D mapping (depth-only and depth+color, GPU-optimized memory access), together with a Depth Regularizer for winsorized multi-view depth fusion with polynomial-regression weighting and robust confidence filtering.}
 			% (the few-shot logo classifier is also commented out; see git history to restore it)
@@ -68,7 +68,7 @@
 			\resumeItem{Proved it on teammates' models: two ported their HRNet and YOLO into its keypoint and Mask R-CNN heads.}
 			\resumeItem{Fine-tuned and deployed its SigLIP classifier with independent sigmoid heads; built multi-camera calibration, 3D reconstruction, and neural scene representations\M{dt-reproj,dt-recon-mm}{ (\N{dt-reproj}\,px reprojection error, \N{dt-recon-mm}\,mm reconstruction error)}.}
 		\resumeNestedListEnd
-		\resumeItem{Build and maintain the MLOps stack for the ML lifecycle: MLflow (PyTorch, TensorFlow, Keras), a private S3-backed APT repository with release and dev channels, and libinference's release ceremonies\M{rel-per-month,apt-channels}{, shipping \N{rel-per-month} releases a month across \N{apt-channels} channels}.}
+		\resumeItem{Build the MLOps stack for the ML lifecycle (AMP training, PAT, PTQ, deployment): MLflow (PyTorch, TensorFlow, Keras), a private S3-backed APT repository with release and dev channels, and libinference's release ceremonies\M{rel-per-month,apt-channels}{, shipping \N{rel-per-month} releases a month across \N{apt-channels} channels}.}
 		\resumeItem{Own the project board for a six-person team that operates ten-strong through agentic development and review pipelines\M{velocity-x}{ (\N{velocity-x}$\times$ more merged changes per week)}: divide products into MVPs\M{mvps-shipped}{ (\N{mvps-shipped} shipped)}, develop technical plans, run agile with weekly demos, and mentor the team.}
 	\resumeItemListEnd
 
@@ -129,7 +129,10 @@
 % SigLIP is backed by the Decision Tower bullet; YOLO by the teammate port onto r2-bb.
 % TODO: DINOv3, COLMAP, 3D Gaussian Splatting and ROS still have no supporting bullet anywhere -- either
 % add one (project or role) or remove them, since interviewers will ask.
-\needspace{9\baselineskip}
+% Keep the skills block whole: it stays on page 1 only while at least a 0.38in bottom margin remains (tested),
+% otherwise it moves to page 2 in one piece.
+\providecommand{\skillsneed}{11.5\baselineskip}
+\needspace{\skillsneed}
 \section{Technical \& Language Skills}
  \begin{itemize}[leftmargin=0.15in, label={}]
     \small{\item{
@@ -137,7 +140,7 @@
 	 \textbf{ML/CV:}{~PyTorch, TensorFlow, Keras, OpenCV, scikit-learn, scikit-image, YOLO, DINOv3, ViT, SigLIP, ConvNeXt V2} \\
 	 \textbf{3D Vision \& Robotics:}{~COLMAP, Multi-view Geometry, TSDF Fusion, 3D Gaussian Splatting, ROS} \\
 	 \textbf{Simulation \& NVIDIA Stack:}{~Isaac Sim (Omniverse), Jetson, Blender, Synthetic Data Generation, CUDA, TensorRT} \\
-	 \textbf{Deployment, Optimization \& MLOps:}{~ONNX, MLflow, CUDA Kernels, Quantization, Pruning, Model Distillation} \\
+	 \textbf{Optimization \& MLOps:}{~ONNX, MLflow, CUDA Kernels, Quantization (PTQ), Pruning (PAT), AMP, Distillation} \\
      \textbf{Tools \& Technologies:}{~Linux (amd64, arm64), APT, AWS S3, Git, GitHub, GitLab, CI/CD, Docker, \LaTeX} \\
 	 \textbf{Language Proficiency:}{~Turkish (Native), English (Proficient), German (Novice)}
     }}
