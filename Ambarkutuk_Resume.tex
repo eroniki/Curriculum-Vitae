@@ -21,7 +21,7 @@
     {\Huge \scshape Murat Ambarkutuk} \\ \vspace{1pt}
     % Intentionally no phone number or home address: this resume is published on a public website.
 	~ \href{mailto:murat@ambarkutuk.com}{\raisebox{-0.2\height}\faEnvelope\  \underline{murat@ambarkutuk.com}}
-	~ \href{https://murat.ambarkutuk.com}{\raisebox{-0.2\height}\faBookmark\  \underline{murat.ambarkutuk.com}} \\
+	~ \href{https://murat.ambarkutuk.com}{\raisebox{-0.2\height}\faBookmark\  \underline{murat.ambarkutuk.com}}
     ~ \href{https://linkedin.com/in/muratambarkutuk/}{\raisebox{-0.2\height}\faLinkedin\ \underline{muratambarkutuk}}
 	~ \href{https://github.com/eroniki}{\raisebox{-0.2\height}\faGithub\ \underline{eroniki}}
 	% Removed: code.vt.edu GitLab link (likely needs a VT login, so recruiters cannot open it).
@@ -45,39 +45,37 @@
       \end{tabular*}
       \resumeItemListStart
 		% Structure: present-tense parents lead; past-tense deliverables nest under them as children.
-		% One system: r2-bb pretrains/freezes the backbones and trains heads -> contracts let independent heads share one pass ->
-		% libinference serves them -> Decision Tower 2.0 is built on top; MLOps supports all of it.
+		% One system: r2-bb (training path) -> frozen shared backbone + contracts -> task heads; libinference (inference path)
+		% serves them; Decision Tower 2.0 is the product on top. Every bullet is kept to two lines or fewer.
 		% Metric slots are the \M{...} clauses; their numbers live in metrics.tex. Unset slots stay out of the PDF.
-		\resumeItem{Own the machine learning and perception stack end to end, from development through runtime, across Linux amd64 and arm64 platforms, including NVIDIA Jetson Nano, Orin Nano, and NX (CUDA, TensorRT)\M{fleet-devices,fleet-sites}{, deployed on \N{fleet-devices} devices across \N{fleet-sites} sites}.}
+		% Teammates are deliberately not named: this resume is public.
+		\resumeItem{Own the machine learning and perception stack from development to runtime, on Linux amd64/arm64 and Jetson (Nano, Orin~Nano, NX)\M{fleet-devices,fleet-sites}{, deployed on \N{fleet-devices} devices across \N{fleet-sites} sites}; its contracts and MLOps cut development from 6 sprints to 3 for features and from 12 to 2 for models.}
 		\resumeNestedListStart
-			\resumeItem{Created r2-bb, the training path: pretrained ViT and ConvNeXt V2 backbones in-house\M{pretrain-images}{ on \N{pretrain-images} images}, froze them, and trained task heads on them.}
-			\resumeItem{Defined the downstream contracts that let independent task heads solve many perception problems from one backbone pass, amortizing inference and enabling edge-level optimizations at industrial scale\M{amort-sep-ms,amort-shared-ms,amort-k}{, cutting p50 latency from \N{amort-sep-ms}\,ms to \N{amort-shared-ms}\,ms for \N{amort-k} heads on Orin Nano}\M{amort-mem-pct,amort-energy-pct}{, with \N{amort-mem-pct}\% less memory and \N{amort-energy-pct}\% less energy per frame}.}
-			\resumeItem{Built task heads on the frozen backbone: a fine-tuned, deployed multi-head classifier, a heatmap-based keypoint estimator, and segmentation and oriented-box heads, \M[some in production and others in development]{heads-prod,heads-dev}{\N{heads-prod} in production and \N{heads-dev} in development}\M{cls-f1,kp-oks,seg-miou}{; \N{cls-f1} classifier F1, \N{kp-oks} keypoint OKS, \N{seg-miou} segmentation mIoU}.}
-			\resumeItem{Built libinference, the inference path: a header-only, cross-platform ONNX/TensorRT library with dynamic shapes, multi-GPU support, CUDA stream parallelism, and unified logging\M{libinf-overhead,libinf-load-s}{, with \N{libinf-overhead}\% overhead over raw TensorRT and \N{libinf-load-s}\,s engine load on Orin Nano}.}
-			\resumeItem{Compressed models with knowledge distillation and pruning for efficient inference\M{comp-size-x,comp-speed-x,comp-acc-pt}{ (\N{comp-size-x}$\times$ smaller, \N{comp-speed-x}$\times$ faster, \N{comp-acc-pt}\,pt accuracy cost)}; in-house pretrained teacher and student, teacher swappable for any ViT- or ConvNeXt V2-based foundation vision encoder.}
+			\resumeItem{Built r2-bb, the training path: pretrained and froze ViT and ConvNeXt V2 backbones in-house\M{pretrain-images}{ (\N{pretrain-images} images)} and defined the contracts that let independent task heads share one backbone pass, amortizing edge inference at industrial scale\M{amort-sep-ms,amort-shared-ms,amort-k}{, cutting p50 latency from \N{amort-sep-ms}\,ms to \N{amort-shared-ms}\,ms for \N{amort-k} heads on Orin Nano}\M{amort-mem-pct,amort-energy-pct}{, with \N{amort-mem-pct}\% less memory and \N{amort-energy-pct}\% less energy per frame}.}
+			\resumeItem{Grew it into the team's platform: classifier, heatmap keypoint, Mask R-CNN, and oriented-box heads on one backbone (\M[some in production, others in development]{heads-prod,heads-dev}{\N{heads-prod} in production, \N{heads-dev} in development}), including two teammates' HRNet and YOLO models ported onto it\M{cls-f1,kp-oks,seg-miou}{; \N{cls-f1} classifier F1, \N{kp-oks} keypoint OKS, \N{seg-miou} segmentation mIoU}.}
+			\resumeItem{Built libinference, the inference path: a header-only, cross-platform ONNX/TensorRT library with dynamic shapes, multi-GPU support, and CUDA stream parallelism\M{libinf-overhead,libinf-load-s}{, with \N{libinf-overhead}\% overhead over raw TensorRT and \N{libinf-load-s}\,s engine load on Orin Nano}.}
+			\resumeItem{Compressed models with pruning and knowledge distillation from in-house or foundation-encoder teachers\M{comp-size-x,comp-speed-x,comp-acc-pt}{ (\N{comp-size-x}$\times$ smaller, \N{comp-speed-x}$\times$ faster, \N{comp-acc-pt}\,pt accuracy cost)}.}
 			\resumeItem{Built synthetic data generation pipelines with NVIDIA Isaac Sim and a Blender-based native generator\M{synth-images,synth-lift}{, \N{synth-images}k images lifting held-out real accuracy \N{synth-lift}\,pt}.}
 			% \resumeItem{Built a production TSDF fusion pipeline with voxel hashing in CUDA for large-scale 3D mapping (depth-only and depth+color, GPU-optimized memory access), together with a Depth Regularizer for winsorized multi-view depth fusion with polynomial-regression weighting and robust confidence filtering.}
 			% (the few-shot logo classifier is also commented out; see git history to restore it)
 		\resumeNestedListEnd
-		\resumeItem{Architect Decision Tower 2.0, a full rewrite of the second-generation perception stack for end-of-line packaging (quality control and order verification), on the same frozen backbone with amortized inference\M{dt-ipm}{, sustaining \N{dt-ipm} items per minute per station}.}
-		% Descriptor 'end-of-line packaging, quality control and order verification' comes from Ranpak's public DecisionTower pages;
-		% remove it if you would rather not describe the product. Production status of 2.0 is deliberately not claimed.
+		\resumeItem{Architect Decision Tower 2.0, the end-of-line packaging perception stack rewritten on r2-bb with amortized inference\M{dt-ipm}{, sustaining \N{dt-ipm} items per minute per station}.}
+		% 'end-of-line packaging' comes from Ranpak's public DecisionTower pages. Production status of 2.0 is not claimed
+		% beyond the author's own statement that the classifier is deployed.
 		\resumeNestedListStart
-			\resumeItem{Built multi-camera calibration, multi-camera 3D reconstruction, and neural scene representations\M{dt-reproj,dt-recon-mm}{ (\N{dt-reproj}\,px reprojection error, \N{dt-recon-mm}\,mm reconstruction error)}.}
+			\resumeItem{Fine-tuned and deployed its SigLIP classifier with independent sigmoid heads; built multi-camera calibration, 3D reconstruction, and neural scene representations\M{dt-reproj,dt-recon-mm}{ (\N{dt-reproj}\,px reprojection error, \N{dt-recon-mm}\,mm reconstruction error)}.}
 		\resumeNestedListEnd
-		\resumeItem{Build and maintain the MLOps stack for the ML lifecycle: MLflow (PyTorch, TensorFlow, Keras), a private S3-backed APT repository with release and dev channels, and the full maintenance and release ceremonies of libinference\M{rel-per-month,apt-channels}{, shipping \N{rel-per-month} releases a month across \N{apt-channels} channels}.}
-		\resumeItem{Own the project board: divide products into MVPs\M{mvps-shipped}{ (\N{mvps-shipped} shipped)}, develop technical plans, and execute them with agile and a demo-every-week mentality; agentic development and review pipelines let the six-person team operate ten-strong\M{velocity-x}{, merging \N{velocity-x}$\times$ more changes per week}.}
-		\resumeItem{Host cross-functional engineering meetings to align with the product roadmap, and mentor team members on computer vision, deep learning optimization, and production deployment.}
+		\resumeItem{Build and maintain the MLOps stack for the ML lifecycle: MLflow (PyTorch, TensorFlow, Keras), a private S3-backed APT repository with release and dev channels, and libinference's release ceremonies\M{rel-per-month,apt-channels}{, shipping \N{rel-per-month} releases a month across \N{apt-channels} channels}.}
+		\resumeItem{Own the project board for a six-person team that operates ten-strong through agentic development and review pipelines\M{velocity-x}{ (\N{velocity-x}$\times$ more merged changes per week)}: divide products into MVPs\M{mvps-shipped}{ (\N{mvps-shipped} shipped)}, develop technical plans, run agile with weekly demos, and mentor the team.}
 	\resumeItemListEnd
 
     \resumeSubheading
       {Baykar Defense (TR) - Atlas Imaging (US)}{2018 -- 2020}
       {Computer Vision Engineer}{Remote}
       \resumeItemListStart
-		\resumeItem{Developed orthorectified maps from aerial photos taken by autonomous UAVs. Derived the pose (location and orientation) of the UAV and its components from distributed Inertial Navigation System measurements, then used it in an iterative computer vision algorithm that projects image corners onto the ground while accounting for elevation changes in the scene.}
-		\resumeItem{Built a sensor fusion algorithm, with a statistical representation, to correct the results of the earlier stages of the map-making pipeline.}
-		\resumeItem{Introduced test-driven development to the team: wrote tests for coverage, style requirements, and the performance and accuracy of the algorithms.}
-		\resumeItem{Architected the CI/CD pipeline that runs these tests automatically and generates reports from the results.}
+		\resumeItem{Developed orthorectified maps from autonomous-UAV aerial photos: derived the pose of the UAV and its components from distributed INS measurements, then iteratively projected image corners onto terrain with elevation changes.}
+		\resumeItem{Built a statistical sensor fusion stage that corrects the results of the earlier map-making stages.}
+		\resumeItem{Introduced test-driven development and architected the CI/CD pipeline that runs and reports the tests automatically.}
 	\resumeItemListEnd
 
     % \resumeSubheading
@@ -118,19 +116,22 @@
 	%   \textit{\underline{Advisor:}} Prof. Hasan Ocak \\
 	  \textit{\underline{Thesis:}} Box Dimensioning System with Kinect Sensor
   \resumeSubHeadingListEnd
+\vspace{-18pt} % match the spacing used before the other section headings
 
 %-----------PROGRAMMING SKILLS-----------
 % Changes vs v1: dropped PHP / HTML/CSS / JavaScript (not relevant to a perception role);
 % "DINOv2" -> "DINOv2/v3" to match the experience section.
 % Backed (confirmed by the author): PyTorch, TensorFlow and Keras run in the MLflow stack (see the MLOps bullet);
 % TSDF Fusion is a paused Decision Tower project (its bullet above is commented out on purpose; keep it here).
-% TODO: YOLO, DINOv3, COLMAP, 3D Gaussian Splatting and ROS still have no supporting bullet anywhere -- either
+% SigLIP is backed by the Decision Tower bullet; YOLO by the teammate port onto r2-bb.
+% TODO: DINOv3, COLMAP, 3D Gaussian Splatting and ROS still have no supporting bullet anywhere -- either
 % add one (project or role) or remove them, since interviewers will ask.
+\needspace{9\baselineskip}
 \section{Technical \& Language Skills}
  \begin{itemize}[leftmargin=0.15in, label={}]
     \small{\item{
      \textbf{Languages:}{~Python, C++, C, CUDA, MATLAB} \\
-	 \textbf{ML/CV:}{~PyTorch, TensorFlow, Keras, OpenCV, scikit-learn, scikit-image, YOLO, DINOv3, ViT, ConvNeXt V2} \\
+	 \textbf{ML/CV:}{~PyTorch, TensorFlow, Keras, OpenCV, scikit-learn, scikit-image, YOLO, DINOv3, ViT, SigLIP, ConvNeXt V2} \\
 	 \textbf{3D Vision \& Robotics:}{~COLMAP, Multi-view Geometry, TSDF Fusion, 3D Gaussian Splatting, ROS} \\
 	 \textbf{Simulation \& NVIDIA Stack:}{~Isaac Sim (Omniverse), Jetson, Blender, Synthetic Data Generation, CUDA, TensorRT} \\
 	 \textbf{Deployment, Optimization \& MLOps:}{~ONNX, MLflow, CUDA Kernels, Quantization, Pruning, Model Distillation} \\

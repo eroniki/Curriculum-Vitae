@@ -20,13 +20,13 @@
 %   - FP16 (and INT8 if you ship it). Same input resolution. Say whether pre/post-processing is included.
 %   - Never write a number you cannot reproduce on demand.
 %
-% PAGE BUDGET (tested with dummy values): with every other slot empty, these six clauses fit on exactly
-% 2 pages: amort latency, amort memory + energy, compression, libinference, Decision Tower items per
-% minute, and velocity. In keys: amort-sep-ms, amort-shared-ms, amort-k, amort-mem-pct, amort-energy-pct,
-% comp-size-x, comp-speed-x, comp-acc-pt, libinf-overhead, libinf-load-s, dt-ipm, velocity-x.
-% Filling all 27 slots makes it 3 pages, and adding the head-quality and synthetic-data numbers to the
-% six clauses above also tips it to 3. Pick the numbers you can defend best; to fit more, free space
-% elsewhere first (the Baykar entry is the cheapest place to cut).
+% PAGE BUDGET (tested with dummy values at five fill levels, from no slots to all 27): always 2 pages.
+% With no numbers, or only the amortized-latency clause, the skills block sits at the bottom of page 1;
+% once more clauses are filled it moves to page 2 as a whole (it is never split). Fill the ones you can
+% defend; the amortization comparison is the headline.
+%
+% ALREADY IN THE BULLETS (author-supplied, not slots): contracts + MLOps cut development from 6 sprints
+% to 3 for features and from 12 to 2 for models.
 %
 % Values are pasted into sentences as-is: write "41" not "41 ms" (the unit is already in the sentence).
 % =============================================================================================
