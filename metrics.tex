@@ -1,0 +1,101 @@
+% =============================================================================================
+% metrics.tex: the numbers behind the resume bullets. Fill a slot, rebuild, and the clause that
+% uses it appears; leave it blank and the clause stays out of the PDF.
+%
+% HOW TO USE
+%   1. Measure (protocol below), then remove the leading "% " from a \setmetric line and put the
+%      value in the second braces, e.g.   \setmetric{amort-sep-ms}{41}
+%   2. Build the resume:        latexmk -pdf Ambarkutuk_Resume.tex
+%      Only clauses whose numbers are ALL set are printed. The build warns loudly if the result
+%      runs past 2 pages: then drop the weakest clause (comment out one of its numbers).
+%   3. See every slot as a red placeholder (a worksheet, never to be published):
+%        latexmk -pdf -usepretex -pretex='\def\METRICSDRAFT{1}' \
+%                -jobname=Ambarkutuk_Resume_metrics-draft Ambarkutuk_Resume.tex
+%
+% MEASUREMENT PROTOCOL (all device numbers)
+%   - Same JetPack and TensorRT build for every comparison; state it in your notes.
+%   - Fixed power mode (say which, e.g. MAXN or 15 W) with `sudo jetson_clocks` on; thermal steady state.
+%   - 200 to 500 warm-up iterations, then at least 1000 timed iterations, repeated 3 times.
+%   - Report the median (p50), not the mean. Power and energy from `tegrastats`, averaged over the run.
+%   - FP16 (and INT8 if you ship it). Same input resolution. Say whether pre/post-processing is included.
+%   - Never write a number you cannot reproduce on demand.
+%
+% PAGE BUDGET (tested with dummy values): with every other slot empty, these six clauses fit on exactly
+% 2 pages: amort latency, amort memory + energy, compression, libinference, Decision Tower items per
+% minute, and velocity. In keys: amort-sep-ms, amort-shared-ms, amort-k, amort-mem-pct, amort-energy-pct,
+% comp-size-x, comp-speed-x, comp-acc-pt, libinf-overhead, libinf-load-s, dt-ipm, velocity-x.
+% Filling all 27 slots makes it 3 pages, and adding the head-quality and synthetic-data numbers to the
+% six clauses above also tips it to 3. Pick the numbers you can defend best; to fit more, free space
+% elsewhere first (the Baykar entry is the cheapest place to cut).
+%
+% Values are pasted into sentences as-is: write "41" not "41 ms" (the unit is already in the sentence).
+% =============================================================================================
+
+% ---- Stack ownership ---------------------------------------------------------------------
+% Devices and sites running your stack (skip if not shareable).
+% \setmetric{fleet-devices}{}
+% \setmetric{fleet-sites}{}
+
+% ---- r2-bb (training path) ---------------------------------------------------------------
+% Images used to pretrain the backbones, e.g. "2.4M".
+% \setmetric{pretrain-images}{}
+
+% ---- Amortized inference: THE HEADLINE NUMBER ---------------------------------------------
+% On Orin Nano, FP16: run K separate full models (backbone + one head each) back to back, then run
+% 1 shared backbone + the same K heads.
+% p50 latency per frame in ms for the K separate models:
+% \setmetric{amort-sep-ms}{}
+% p50 latency per frame in ms for the shared backbone + K heads:
+% \setmetric{amort-shared-ms}{}
+% K, the number of heads in this comparison:
+% \setmetric{amort-k}{}
+% Percent less peak GPU memory, shared vs separate:
+% \setmetric{amort-mem-pct}{}
+% Percent less energy per frame, shared vs separate (tegrastats):
+% \setmetric{amort-energy-pct}{}
+% (Repeat on Nano and NX for your own notes; the resume sentence names Orin Nano.)
+
+% ---- Heads -------------------------------------------------------------------------------
+% How many heads are in production, and how many are in development.
+% \setmetric{heads-prod}{}
+% \setmetric{heads-dev}{}
+% Quality on held-out REAL data. Write the number as you will quote it, e.g. "0.94".
+% \setmetric{cls-f1}{}
+% \setmetric{kp-oks}{}
+% \setmetric{seg-miou}{}
+
+% ---- libinference (inference path) -------------------------------------------------------
+% Percent overhead vs raw `trtexec` on the same engine (target: under 2), and engine load time (s).
+% \setmetric{libinf-overhead}{}
+% \setmetric{libinf-load-s}{}
+
+% ---- Compression (distillation + pruning) -------------------------------------------------
+% Teacher size / student size (the "x smaller" number), teacher latency / student latency
+% (the "x faster" number), and accuracy lost in points (write "0.6" for a 0.6 point loss).
+% \setmetric{comp-size-x}{}
+% \setmetric{comp-speed-x}{}
+% \setmetric{comp-acc-pt}{}
+
+% ---- Synthetic data ----------------------------------------------------------------------
+% Thousands of images generated (write "120" for 120k), and the accuracy lift in points on a
+% held-out REAL set: real-only vs real + synthetic.
+% \setmetric{synth-images}{}
+% \setmetric{synth-lift}{}
+
+% ---- Decision Tower 2.0 (only what you may share) ----------------------------------------
+% Items per minute sustained per station.
+% \setmetric{dt-ipm}{}
+% Calibration reprojection error (px) and 3D reconstruction error (mm).
+% \setmetric{dt-reproj}{}
+% \setmetric{dt-recon-mm}{}
+
+% ---- MLOps / release ---------------------------------------------------------------------
+% Releases per month (over the last 6 months) and number of APT channels.
+% \setmetric{rel-per-month}{}
+% \setmetric{apt-channels}{}
+
+% ---- Team ---------------------------------------------------------------------------------
+% MVPs shipped, and the ratio of merged changes per week after / before the agentic pipelines
+% (e.g. "1.8"): this is the proof behind "ten-strong".
+% \setmetric{mvps-shipped}{}
+% \setmetric{velocity-x}{}

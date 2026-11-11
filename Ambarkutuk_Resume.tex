@@ -1,6 +1,9 @@
 \documentclass[letterpaper,11pt]{article}
 
 \usepackage{Ambarkutuk_Resume}
+% Numbers for the metric slots live in metrics.tex (unset slots stay out of the PDF).
+\providecommand{\metricsfile}{metrics}
+\InputIfFileExists{\metricsfile}{}{}
 
 \begin{document}
 % Publications kept: those relevant to perception / sensing / sensor fusion.
@@ -32,9 +35,7 @@
 
     % The two R^2 Robotics entries and the seven RANPAK items from the old Projects
     % section are merged here so each piece of work appears once.
-    % TODO (biggest remaining win): add real numbers to the bullets below, e.g.
-    %   inference latency / fps on Jetson Nano, Orin Nano and NX, per-head quality (accuracy, OKS, mIoU, mAP),
-    %   model-size or speed-up from distillation, packages per minute, number of cameras/sites, team size mentored.
+    % Numbers: see metrics.tex (slots appear in the bullets as \M{...} clauses).
     % Optional: add the employer's city/state here; skip it if you would rather not publish it.
     \vspace{-2pt}\item
       \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
@@ -46,39 +47,26 @@
 		% Structure: present-tense parents lead; past-tense deliverables nest under them as children.
 		% One system: r2-bb pretrains/freezes the backbones and trains heads -> contracts let independent heads share one pass ->
 		% libinference serves them -> Decision Tower 2.0 is built on top; MLOps supports all of it.
-		% Each item has a METRIC: hint (a comment, not rendered). Add a number by extending the sentence,
-		% e.g. '...; cut p95 latency from X ms to Y ms on Orin Nano'. Do not add a metric you cannot defend.
-		\resumeItem{Own the machine learning and perception stack end to end, from development through runtime, across Linux amd64 and arm64 platforms, including NVIDIA Jetson Nano, Orin Nano, and NX (CUDA, TensorRT).}
-		% METRIC: devices in the field, platforms and JetPack versions supported.
+		% Metric slots are the \M{...} clauses; their numbers live in metrics.tex. Unset slots stay out of the PDF.
+		\resumeItem{Own the machine learning and perception stack end to end, from development through runtime, across Linux amd64 and arm64 platforms, including NVIDIA Jetson Nano, Orin Nano, and NX (CUDA, TensorRT)\M{fleet-devices,fleet-sites}{, deployed on \N{fleet-devices} devices across \N{fleet-sites} sites}.}
 		\resumeNestedListStart
-			\resumeItem{Created r2-bb, the training path: pretrained ViT and ConvNeXt V2 backbones in-house, froze them, and trained task heads on them.}
-			% METRIC: pretraining data scale and time; heads trained per backbone.
-			\resumeItem{Defined the downstream contracts that let independent task heads solve many perception problems from one backbone pass, amortizing inference and enabling edge-level optimizations at industrial scale.}
-			% METRIC (the headline number): 1 shared backbone + K heads vs. K separate models, on Nano, Orin Nano and NX:
-			% latency p50/p95, memory, power or energy per frame, at FP16 (and INT8).
-			\resumeItem{Built task heads on the frozen backbone: a fine-tuned, deployed multi-head classifier, a heatmap-based keypoint estimator, and segmentation and oriented-box heads, some in production and others in development.}
-			% METRIC: heads in production vs. in development; per-head quality (accuracy, OKS, mIoU, mAP).
-			\resumeItem{Built libinference, the inference path: a header-only, cross-platform ONNX/TensorRT library with dynamic shapes, multi-GPU support, CUDA stream parallelism, and unified logging.}
-			% METRIC: overhead vs. raw TensorRT on the same engine, engine load time, devices supported.
-			\resumeItem{Compressed models with knowledge distillation and pruning for efficient inference; in-house pretrained teacher and student, teacher swappable for any ViT- or ConvNeXt V2-based foundation vision encoder.}
-			% METRIC: size and speed-up vs. the teacher, accuracy retained, sparsity level.
-			\resumeItem{Built synthetic data generation pipelines with NVIDIA Isaac Sim and a Blender-based native generator.}
-			% METRIC: images generated, classes covered, accuracy lift on a real held-out set.
+			\resumeItem{Created r2-bb, the training path: pretrained ViT and ConvNeXt V2 backbones in-house\M{pretrain-images}{ on \N{pretrain-images} images}, froze them, and trained task heads on them.}
+			\resumeItem{Defined the downstream contracts that let independent task heads solve many perception problems from one backbone pass, amortizing inference and enabling edge-level optimizations at industrial scale\M{amort-sep-ms,amort-shared-ms,amort-k}{, cutting p50 latency from \N{amort-sep-ms}\,ms to \N{amort-shared-ms}\,ms for \N{amort-k} heads on Orin Nano}\M{amort-mem-pct,amort-energy-pct}{, with \N{amort-mem-pct}\% less memory and \N{amort-energy-pct}\% less energy per frame}.}
+			\resumeItem{Built task heads on the frozen backbone: a fine-tuned, deployed multi-head classifier, a heatmap-based keypoint estimator, and segmentation and oriented-box heads, \M[some in production and others in development]{heads-prod,heads-dev}{\N{heads-prod} in production and \N{heads-dev} in development}\M{cls-f1,kp-oks,seg-miou}{; \N{cls-f1} classifier F1, \N{kp-oks} keypoint OKS, \N{seg-miou} segmentation mIoU}.}
+			\resumeItem{Built libinference, the inference path: a header-only, cross-platform ONNX/TensorRT library with dynamic shapes, multi-GPU support, CUDA stream parallelism, and unified logging\M{libinf-overhead,libinf-load-s}{, with \N{libinf-overhead}\% overhead over raw TensorRT and \N{libinf-load-s}\,s engine load on Orin Nano}.}
+			\resumeItem{Compressed models with knowledge distillation and pruning for efficient inference\M{comp-size-x,comp-speed-x,comp-acc-pt}{ (\N{comp-size-x}$\times$ smaller, \N{comp-speed-x}$\times$ faster, \N{comp-acc-pt}\,pt accuracy cost)}; in-house pretrained teacher and student, teacher swappable for any ViT- or ConvNeXt V2-based foundation vision encoder.}
+			\resumeItem{Built synthetic data generation pipelines with NVIDIA Isaac Sim and a Blender-based native generator\M{synth-images,synth-lift}{, \N{synth-images}k images lifting held-out real accuracy \N{synth-lift}\,pt}.}
 			% \resumeItem{Built a production TSDF fusion pipeline with voxel hashing in CUDA for large-scale 3D mapping (depth-only and depth+color, GPU-optimized memory access), together with a Depth Regularizer for winsorized multi-view depth fusion with polynomial-regression weighting and robust confidence filtering.}
 			% (the few-shot logo classifier is also commented out; see git history to restore it)
 		\resumeNestedListEnd
-		\resumeItem{Architect Decision Tower 2.0, a full rewrite of the second-generation perception stack for end-of-line packaging (quality control and order verification), on the same frozen backbone with amortized inference.}
+		\resumeItem{Architect Decision Tower 2.0, a full rewrite of the second-generation perception stack for end-of-line packaging (quality control and order verification), on the same frozen backbone with amortized inference\M{dt-ipm}{, sustaining \N{dt-ipm} items per minute per station}.}
 		% Descriptor 'end-of-line packaging, quality control and order verification' comes from Ranpak's public DecisionTower pages;
 		% remove it if you would rather not describe the product. Production status of 2.0 is deliberately not claimed.
-		% METRIC: end-of-line throughput (items per minute), cameras per station, sites.
 		\resumeNestedListStart
-			\resumeItem{Built multi-camera calibration, multi-camera 3D reconstruction, and neural scene representations.}
-			% METRIC: calibration error, reconstruction accuracy, latency per item.
+			\resumeItem{Built multi-camera calibration, multi-camera 3D reconstruction, and neural scene representations\M{dt-reproj,dt-recon-mm}{ (\N{dt-reproj}\,px reprojection error, \N{dt-recon-mm}\,mm reconstruction error)}.}
 		\resumeNestedListEnd
-		\resumeItem{Build and maintain the MLOps stack for the ML lifecycle: MLflow (PyTorch, TensorFlow, Keras), a private S3-backed APT repository with release and dev channels, and the full maintenance and release ceremonies of libinference.}
-		% METRIC: release cadence, package versions served, experiments tracked.
-		\resumeItem{Own the project board: divide products into MVPs, develop technical plans, and execute them with agile and a demo-every-week mentality; agentic development and review pipelines let the six-person team operate ten-strong.}
-		% METRIC: MVPs shipped, weeks to first MVP, merged changes per week before vs. after the pipelines.
+		\resumeItem{Build and maintain the MLOps stack for the ML lifecycle: MLflow (PyTorch, TensorFlow, Keras), a private S3-backed APT repository with release and dev channels, and the full maintenance and release ceremonies of libinference\M{rel-per-month,apt-channels}{, shipping \N{rel-per-month} releases a month across \N{apt-channels} channels}.}
+		\resumeItem{Own the project board: divide products into MVPs\M{mvps-shipped}{ (\N{mvps-shipped} shipped)}, develop technical plans, and execute them with agile and a demo-every-week mentality; agentic development and review pipelines let the six-person team operate ten-strong\M{velocity-x}{, merging \N{velocity-x}$\times$ more changes per week}.}
 		\resumeItem{Host cross-functional engineering meetings to align with the product roadmap, and mentor team members on computer vision, deep learning optimization, and production deployment.}
 	\resumeItemListEnd
 

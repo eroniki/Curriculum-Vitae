@@ -97,3 +97,23 @@
 \newcommand{\resumeNestedListStart}{\begin{itemize}[leftmargin=0.2in, label={\textendash}, topsep=1pt, partopsep=0pt, itemsep=1.5pt, parsep=0pt]}
 \newcommand{\resumeNestedListEnd}{\end{itemize}}
 
+% ---------------------------------------------------------------------------------------------
+% Metric slots. A bullet carries optional number clauses written as
+%     \M{key1,key2}{clause that uses \N{key1} and \N{key2}}
+% The numbers are set once in metrics.tex with \setmetric{key}{value}.
+%  - final build (default): a clause is printed only when EVERY key it uses is set; otherwise it
+%    vanishes, so an unmeasured slot can never be published by accident;
+%  - worksheet build (\METRICSDRAFT defined, see README): every clause is printed and unset
+%    numbers show as red [key] placeholders, so you can see exactly what to measure.
+% \M[text]{keys}{clause} prints "text" instead when the clause is hidden in a final build.
+\usepackage{etoolbox}
+\newif\ifmetricsdraft
+\ifdefined\METRICSDRAFT\metricsdrafttrue\fi
+\newcommand{\setmetric}[2]{\csgdef{metric@#1}{#2}}
+\newcommand{\metric@isset}[1]{\ifcsdef{metric@#1}{\ifcsempty{metric@#1}{\metricokfalse}{}}{\metricokfalse}}
+\newif\ifmetricok
+\newcommand{\N}[1]{\metricoktrue\metric@isset{#1}\ifmetricok\csuse{metric@#1}\else\textcolor{red}{\textbf{[#1]}}\fi}
+\newcommand{\M}[3][]{\metricoktrue\forcsvlist{\metric@isset}{#2}\ifmetricok #3\else\ifmetricsdraft #3\else #1\fi\fi}
+% Loud warning if a final build runs past the 2-page target.
+\AtEndDocument{\ifmetricsdraft\else\ifnum\value{page}>2 \typeout{^^J*** RESUME IS \thepage{} PAGES, TARGET IS 2: trim or drop a metric clause ***^^J}\fi\fi}
+
