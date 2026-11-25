@@ -1,0 +1,232 @@
+%==============================================================================
+%  Zeynep Ambarkutuk, Ph.D. -- Resume
+%  Single-file, Overleaf-ready (compiler: pdfLaTeX). No extra .sty/.bib needed.
+%
+%  Layout follows the Georgia Tech Career Center Resume Guide:
+%    * 11 pt font, 0.5 in margins, 2 pages
+%    * Bold / ALL CAPS / italics / rules used consistently for scanning
+%    * Experience headings: Organization, City, ST -- Job title -- Month Year
+%    * Bullets start with action verbs; no "I"; most relevant items first
+%    * Name in bold on every co-authored publication / presentation
+%    * Machine-readable (ATS-friendly) text via \pdfgentounicode
+%
+%  To tailor for a specific posting: reorder sections, reorder bullets, and
+%  mirror keywords from the job description (see "TAILORING" notes below).
+%==============================================================================
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage[hidelinks]{hyperref}
+
+\input{glyphtounicode}
+\pdfgentounicode=1   % makes the PDF text parsable by applicant tracking systems
+
+\hypersetup{
+  pdftitle={Zeynep Ambarkutuk - Resume},
+  pdfauthor={Zeynep Ambarkutuk},
+}
+\urlstyle{same}
+\raggedright
+\setlength{\parindent}{0pt}
+\setlength{\tabcolsep}{0pt}
+
+%------------------------------------------------------------------------------
+%  Header / footer: name + page number on page 2 (guide recommendation)
+%------------------------------------------------------------------------------
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[R]{\small Zeynep Ambarkutuk \textbar{} Page \thepage\ of \pageref{LastPage}}
+\fancypagestyle{firstpage}{\fancyhf{}\renewcommand{\headrulewidth}{0pt}}
+
+%------------------------------------------------------------------------------
+%  Section style: ALL CAPS, bold, full-width rule
+%------------------------------------------------------------------------------
+\titleformat{\section}{\large\bfseries\MakeUppercase}{}{0em}{}[\vspace{-6pt}\rule{\linewidth}{0.6pt}]
+\titlespacing*{\section}{0pt}{6pt}{3pt}
+
+%------------------------------------------------------------------------------
+%  Custom commands
+%------------------------------------------------------------------------------
+% \entry{Organization, City, ST}{Dates}{Title / degree}{Right-hand italic note}
+\newcommand{\entry}[4]{%
+  \begin{tabular*}{\linewidth}[t]{@{}l@{\extracolsep{\fill}}r@{}}
+    \textbf{#1} & #2 \\
+    \textit{#3} & \textit{#4} \\
+  \end{tabular*}\par\vspace{1pt}}
+
+% \oneline{Bold left}{Right}  -- compact single-line entry
+\newcommand{\oneline}[2]{%
+  \begin{tabular*}{\linewidth}[t]{@{}l@{\extracolsep{\fill}}r@{}}
+    #1 & #2 \\
+  \end{tabular*}\par}
+
+\newenvironment{bullets}%
+  {\begin{itemize}[leftmargin=1.2em, itemsep=0pt, parsep=0pt, topsep=1pt, label=\textbullet]}%
+  {\end{itemize}\vspace{2pt}}
+
+% Numbered-free reference list with hanging indent
+\newenvironment{refs}%
+  {\begin{list}{}{\setlength{\leftmargin}{1.2em}\setlength{\itemindent}{-1.2em}%
+     \setlength{\itemsep}{2pt}\setlength{\parsep}{0pt}\setlength{\topsep}{2pt}}}%
+  {\end{list}}
+
+\newcommand{\me}{\textbf{Ambarkutuk, Z.}}
+\newcommand{\doi}[1]{\href{https://doi.org/#1}{\nolinkurl{https://doi.org/#1}}}
+
+%==============================================================================
+\begin{document}
+\thispagestyle{firstpage}
+
+%------------------------------------------------------------------------------
+%  HEADING
+%------------------------------------------------------------------------------
+\begin{center}
+  {\fontsize{22}{26}\selectfont\bfseries ZEYNEP AMBARKUTUK, PH.D.}\\[4pt]
+  Atlanta, GA
+  \enspace\textbar\enspace \href{mailto:zeynep@gatech.edu}{zeynep@gatech.edu}%
+  \enspace\textbar\enspace \href{https://zeynep.ambarkutuk.com}{zeynep.ambarkutuk.com}%
+  % \enspace\textbar\enspace (XXX) XXX-XXXX%                                  <-- add phone
+  % \enspace\textbar\enspace \href{https://www.linkedin.com/in/XXXX}{linkedin.com/in/XXXX}%  <-- add LinkedIn
+  % Personal email alternative: zeynepuzuner6@gmail.com
+\end{center}
+\vspace{-6pt}
+
+%------------------------------------------------------------------------------
+\section{Summary of Qualifications}
+%------------------------------------------------------------------------------
+\begin{bullets}
+  \item Mixed-methods educational psychologist studying motivation, engagement, and success in STEM and graduate education
+  \item 5 peer-reviewed publications, 3 manuscripts under review, 13 presentations, 4 semesters as instructor of record
+\end{bullets}
+
+%------------------------------------------------------------------------------
+\section{Education}
+%------------------------------------------------------------------------------
+\entry{Virginia Tech, Blacksburg, VA}{May 2026}
+      {Doctor of Philosophy in Curriculum and Instruction, Educational Psychology}{}
+\begin{bullets}
+  \item Dissertation: \textit{A Structural Motivational Systems Perspective on Student Engagement}
+  \item Graduate Certificates: Educational Research and Evaluation (2024); Cognition and Education (2024)
+  \item Summer Cunningham Fellowship, Virginia Tech Graduate School (2025)
+\end{bullets}
+
+\entry{Virginia Tech, Blacksburg, VA}{December 2023}
+      {Master of Arts in Education in Curriculum and Instruction, Educational Psychology}{}
+
+\entry{Başkent University, Ankara, Türkiye}{June 2017}
+      {Bachelor of Arts in Psychology}{}
+\begin{bullets}
+  \item Academic Success Scholarship (2013--2017); Certificate of Honor (honor student for four semesters)
+\end{bullets}
+
+%------------------------------------------------------------------------------
+\section{Research Experience}
+%------------------------------------------------------------------------------
+\entry{Georgia Institute of Technology, Atlanta, GA}{August 2026 -- Present}
+      {Postdoctoral Fellow, NSF Innovations in Graduate Education (IGE) Project}{}
+\begin{bullets}
+  \item Contribute to every phase of a mixed-methods NSF IGE study, from research design through data collection, analysis, and dissemination, examining how industry-engaged graduate funding structures shape Ph.D.\ student success and faculty research environments
+  \item Design and analyze surveys and longitudinal institutional data across STEM disciplines (quantitative strand)
+  \item Develop protocols, interview students, faculty, and stakeholders, and analyze data (qualitative strand)
+  \item Integrate quantitative and qualitative findings into project reports, manuscripts, and conference presentations
+\end{bullets}
+
+\entry{Virginia Tech, School of Education, Blacksburg, VA}{August 2022 -- May 2026}
+      {Graduate Research Assistant}{}
+\begin{bullets}
+  \item Conducted quantitative and mixed-methods studies of student motivation, engagement, and learning in STEM courses using structural equation modeling, multilevel modeling, and longitudinal analysis
+  \item Produced 5 peer-reviewed publications and 12 conference presentations, including 6 first-authored presentations at AERA, APA, and the Conference on Higher Education Pedagogy
+  \item Co-authored a systematic review and meta-analysis of the MUSIC Model of Motivation and its inventories
+\end{bullets}
+
+\entry{Virginia Tech, College of Engineering, Blacksburg, VA}{May 2024 -- August 2024}
+      {Summer Intern, Center for the Enhancement of Engineering Diversity (CEED)}{}
+\begin{bullets}
+  \item Evaluated CEED Summer 2024 pre-college engineering camps by analyzing quantitative survey data and qualitative focus-group data
+  \item Co-authored a CoNECD 2025 paper reassessing tools that measure summer-program impact
+  \item Mentored women and underrepresented minority students to advance engineering diversity initiatives
+\end{bullets}
+
+%------------------------------------------------------------------------------
+\section{Teaching Experience}
+%------------------------------------------------------------------------------
+\entry{Virginia Tech, School of Education, Blacksburg, VA}{August 2022 -- May 2026}
+      {Instructor of Record and Graduate Teaching Assistant}{}
+\begin{bullets}
+  \item Taught 4 semesters as instructor of record: Educational Assessment (EDEP 3474; Spring 2025, Fall 2025, Spring 2026) and Educational Psychology for PK-12 Teachers (EDEP 2374; Fall 2023)
+  \item Completed the CIRTL Associate Teaching Program (2025) and a Universal Design for Learning (UDL) instructional design certificate (2024)
+  \item Assisted in 5 undergraduate and graduate course offerings, including Psychological Foundations for Teachers (EDEP 5154), covering assessment design, cognition, learning, development, and motivation
+\end{bullets}
+
+\entry{Tall Oaks Montessori School, Blacksburg, VA}{February 2020 -- August 2021}
+      {Teacher}{}
+\begin{bullets}
+  \item Designed student-centered, developmentally appropriate activities fostering social and cognitive growth
+\end{bullets}
+
+\entry{Yaşam Çocuk Kindergarten, Türkiye}{September 2017 -- July 2018}
+      {Psychologist and Education Coordinator}{}
+\begin{bullets}
+  \item Coordinated educational programming and trained teachers and parents on children's developmental needs
+\end{bullets}
+
+%------------------------------------------------------------------------------
+\section{Skills}
+%------------------------------------------------------------------------------
+\begin{tabular*}{\linewidth}{@{}p{0.25\linewidth}>{\raggedright\arraybackslash}p{0.75\linewidth}@{}}
+  \textbf{Quantitative Methods:} & Structural equation modeling, multilevel modeling, longitudinal data analysis, survey design and validation, meta-analysis, systematic review \\[1pt]
+  \textbf{Qualitative Methods:}  & Interview protocol design, semi-structured interviews, focus groups, qualitative coding, mixed-methods integration \\[1pt]
+  \textbf{Software:}             & R, SPSS, HLM; \LaTeX, HTML, CSS, JavaScript \\[1pt]
+  \textbf{Languages:}            & Turkish (native), English (professional proficiency) \\
+\end{tabular*}
+
+%------------------------------------------------------------------------------
+\section{Leadership, Service \& Memberships}
+%------------------------------------------------------------------------------
+\oneline{\textbf{Board Member}, Georgia Tech Postdoctoral Association (GTPA)}{2026 -- Present}
+\oneline{\textbf{Volunteer Contributor}, WERA International Research Network for Motivating Students}{2025 -- Present}
+\oneline{\textbf{Peer Reviewer}, 7 journals (e.g., \textit{Scientific Reports}) and 3 conferences (e.g., AERA, APA)}{2024 -- Present}
+\oneline{\textbf{Member}, American Educational Research Association (AERA)}{2022 -- Present}
+\oneline{\textbf{Campus Ambassador}, American Psychological Association (APA)}{2022 -- 2025}
+
+%------------------------------------------------------------------------------
+\section{Selected Publications}
+%------------------------------------------------------------------------------
+{\small
+\begin{refs}
+  \item \me, \& Jones, B.\ D.\ (2025). Relationships among students' perceptions of motivational climate, course motivation, and effort in undergraduate STEM courses. \textit{Journal for STEM Education Research}. \doi{10.1007/s41979-025-00175-y}
+  \item Jones, B.\ D., \me, \& Schunk, D.\ H.\ (2025). Applications of the MUSIC Model of Motivation and its associated inventories: A systematic review and meta-analysis. \textit{International Journal of Applied Positive Psychology, 10}, Article 67. \doi{10.1007/s41042-025-00249-7}
+  \item \me, McDaniel, J.\ M., Hampton, C., \& Lester, K.\ (2025). Revisiting assessment tools used to measure the impact of summer program interventions on perceptions and interest in engineering among underrepresented pre-college students -- A work in progress. In \textit{Proceedings of the 2025 CoNECD Conference}, San Antonio, TX. \doi{10.18260/1-2--54111}
+  \item Jones, B.\ D., Zhu, X., Ellis, M., \me, \& Fenerci, H.\ (2024). Connections between students' perceptions of the motivational climate in a course and their motivational beliefs and academic and career goals. \textit{European Journal of Engineering Education, 50}(4), 702--723. \doi{10.1080/03043797.2024.2446551}
+\end{refs}
+}
+
+%------------------------------------------------------------------------------
+\section{Selected Presentations}
+%------------------------------------------------------------------------------
+{\small
+\begin{refs}
+  \item Seo, G., \& \me\ (2026). \textit{Beyond funding alone: Helping PhD students navigate financial challenges to succeed}. Strategy discussion presented at the Graduate Education Summit 2026.
+  \item \me, \& Jones, B.\ D.\ (2026, April). \textit{Effects of motivational climate on motivational beliefs in computer science: A longitudinal analysis}. Paper presented at the AERA Annual Meeting, Los Angeles, CA.
+  \item \me, \& Jones, B.\ D.\ (2024, August). \textit{Undergraduate students' perceptions of the motivational climate predict their motivation}. Paper presented at the APA Annual Convention, Seattle, WA.
+\end{refs}
+}
+
+%------------------------------------------------------------------------------
+%  TAILORING NOTES (not printed)
+%  * Faculty / teaching-focused role: move Teaching Experience above Research.
+%  * Industry / UX-research / evaluation role: lead with Summary + Skills, and
+%    trim Selected Publications to 2-3 items.
+%  * Full lists (all pubs/presentations, trainings, courses) live in the CV.
+%------------------------------------------------------------------------------
+\end{document}
