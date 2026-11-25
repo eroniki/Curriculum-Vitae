@@ -1,0 +1,297 @@
+%==============================================================================
+%  Zeynep Ambarkutuk, Ph.D. -- Curriculum Vitae for green card (EB-1A / NIW)
+%  initial evaluation (WeGreened).
+%  Single-file, Overleaf-ready (compiler: pdfLaTeX). No extra .sty/.bib needed.
+%
+%  Organized around the evidence an immigration evaluator looks for:
+%    publications, presentations, peer review (judging the work of others),
+%    leading / critical roles, funded research, awards, and memberships.
+%  Items not relevant to the evaluation (early non-research jobs, trainings,
+%  languages) are left out; the early jobs are kept below as comments.
+%
+%  Formatting follows the Georgia Tech Career Center CV tips:
+%    11 pt font, 1 in margins, name + page number on every page,
+%    reverse-chronological order, dates on every item, own name in bold.
+%==============================================================================
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{array}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage[hidelinks]{hyperref}
+
+\input{glyphtounicode}
+\pdfgentounicode=1   % keeps the PDF text machine-readable
+
+\hypersetup{
+  pdftitle={Zeynep Ambarkutuk - Curriculum Vitae},
+  pdfauthor={Zeynep Ambarkutuk},
+}
+\urlstyle{same}
+\raggedright
+\setlength{\parindent}{0pt}
+\setlength{\tabcolsep}{0pt}
+
+%------------------------------------------------------------------------------
+%  Footer: name + page number on every page
+%------------------------------------------------------------------------------
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[R]{\small Zeynep Ambarkutuk, Ph.D.\ \textbar{} Curriculum Vitae \textbar{} Page \thepage\ of \pageref{LastPage}}
+
+%------------------------------------------------------------------------------
+%  Section style: ALL CAPS, bold, full-width rule
+%------------------------------------------------------------------------------
+\titleformat{\section}{\large\bfseries\MakeUppercase}{}{0em}{}[\vspace{-6pt}\rule{\linewidth}{0.6pt}]
+\titlespacing*{\section}{0pt}{10pt}{4pt}
+\titleformat{\subsection}{\normalsize\bfseries\itshape}{}{0em}{}
+\titlespacing*{\subsection}{0pt}{4pt}{2pt}
+
+%------------------------------------------------------------------------------
+%  Custom commands
+%------------------------------------------------------------------------------
+% \entry{Organization, City, ST}{Dates}{Title / degree}
+\newcommand{\entry}[3]{%
+  \begin{tabular*}{\linewidth}[t]{@{}>{\raggedright\arraybackslash}p{0.74\linewidth}@{\extracolsep{\fill}}r@{}}
+    \textbf{#1} & #2 \\
+    \multicolumn{2}{@{}l@{}}{\textit{#3}} \\
+  \end{tabular*}\par\vspace{1pt}}
+
+% \oneline{Left}{Right}
+\newcommand{\oneline}[2]{%
+  \begin{tabular*}{\linewidth}[t]{@{}l@{\extracolsep{\fill}}r@{}}
+    #1 & #2 \\
+  \end{tabular*}\par}
+
+\newenvironment{bullets}%
+  {\begin{itemize}[leftmargin=1.2em, itemsep=1pt, parsep=0pt, topsep=1pt, label=\textbullet]}%
+  {\end{itemize}\vspace{4pt}}
+
+% Reverse-numbered reference list: \item[{[5]}] ...
+\newenvironment{refs}%
+  {\begin{itemize}[leftmargin=2.2em, labelwidth=1.8em, labelsep=0.4em, align=left,
+                   itemsep=3pt, parsep=0pt, topsep=2pt]}%
+  {\end{itemize}}
+
+\newcommand{\me}{\textbf{Ambarkutuk, Z.}}
+\newcommand{\doi}[1]{\href{https://doi.org/#1}{\nolinkurl{https://doi.org/#1}}}
+
+%==============================================================================
+\begin{document}
+
+%------------------------------------------------------------------------------
+%  HEADING
+%------------------------------------------------------------------------------
+\begin{center}
+  {\fontsize{20}{24}\selectfont\bfseries ZEYNEP AMBARKUTUK, PH.D.}\\[4pt]
+  Postdoctoral Fellow, Georgia Institute of Technology, Atlanta, GA\\[2pt]
+  \href{mailto:zeynep@gatech.edu}{zeynep@gatech.edu}%
+  \enspace\textbar\enspace \href{https://zeynep.ambarkutuk.com}{zeynep.ambarkutuk.com}%
+  % \enspace\textbar\enspace \href{https://scholar.google.com/citations?user=XXXX}{Google Scholar}%  <-- add Google Scholar profile
+  % \enspace\textbar\enspace (XXX) XXX-XXXX%                                                          <-- add phone
+\end{center}
+
+%------------------------------------------------------------------------------
+\section{Research Profile}
+%------------------------------------------------------------------------------
+Educational psychologist and mixed-methods researcher studying motivation, engagement, and success of students in STEM higher education and graduate training. Combines advanced quantitative methods (structural equation modeling, multilevel modeling, longitudinal analysis, meta-analysis) with qualitative methods to identify the course- and institution-level conditions that help STEM students persist and succeed. Currently leads the quantitative research of a National Science Foundation (NSF) study of how graduate funding structures shape Ph.D.\ student success.
+
+\medskip
+\begin{tabular*}{\linewidth}{@{}l@{\extracolsep{\fill}}l@{}}
+  \textbf{5} peer-reviewed publications &
+  \textbf{3} manuscripts under review \\
+  \textbf{13} conference presentations &
+  \textbf{7} journals and \textbf{3} conferences served as peer reviewer \\
+\end{tabular*}
+
+%------------------------------------------------------------------------------
+\section{Education}
+%------------------------------------------------------------------------------
+\entry{Virginia Tech, Blacksburg, VA}{May 2026}
+      {Doctor of Philosophy in Curriculum and Instruction, Educational Psychology}
+\begin{bullets}
+  \item Dissertation: \textit{A Structural Motivational Systems Perspective on Student Engagement}
+  \item Advisor: Dr.\ Brett D.\ Jones
+\end{bullets}
+
+\entry{Virginia Tech, Blacksburg, VA}{December 2023}
+      {Master of Arts in Education in Curriculum and Instruction, Educational Psychology}
+\begin{bullets}
+  \item Graduate Certificates: Educational Research and Evaluation (December 2024); Cognition and Education (October 2024)
+\end{bullets}
+
+\entry{Başkent University, Ankara, Türkiye}{June 2017}
+      {Bachelor of Arts in Psychology}
+\begin{bullets}
+  \item Thesis: \textit{A Comparison of Working Memory Biases in Groups Displaying Varying Social Anxiety Disorder Levels}
+\end{bullets}
+
+%------------------------------------------------------------------------------
+\section{Research Experience}
+%------------------------------------------------------------------------------
+\entry{Georgia Institute of Technology, Atlanta, GA}{August 2026 -- Present}
+      {Postdoctoral Fellow, NSF Innovations in Graduate Education (IGE) Project}
+\begin{bullets}
+  \item Lead the quantitative research of the NSF IGE project \textit{Flexible Graduate Student Funding Models: Industry Engagement and Internships for Career Development}, a mixed-methods study examining how industry-engaged graduate funding structures shape Ph.D.\ student success and faculty research environments across STEM disciplines
+  \item Contribute to every phase of the study, from research design and instrument development through data collection, analysis, and dissemination
+  \item Design surveys and analyze survey and longitudinal institutional data to compare Ph.D.\ student outcomes across funding structures
+  \item Develop interview protocols, interview Ph.D.\ students, faculty, and other stakeholder groups, and analyze qualitative data in NVivo
+  \item Integrate quantitative and qualitative findings into project reports, manuscripts, and presentations, including a 2026 Graduate Education Summit strategy discussion
+\end{bullets}
+
+\entry{Virginia Tech, School of Education, Blacksburg, VA}{August 2022 -- May 2026}
+      {Graduate Research Assistant}
+\begin{bullets}
+  \item Conducted quantitative and mixed-methods studies of student motivation, engagement, and learning in STEM courses (computer science, engineering, mathematics) using structural equation modeling, multilevel modeling, and longitudinal analysis
+  \item Co-authored a systematic review and meta-analysis of the MUSIC Model of Motivation and its inventories
+  \item Contributed to internally and externally funded projects through data analysis, evaluation, and dissemination of evidence-based instructional practices
+\end{bullets}
+
+\entry{Center for the Enhancement of Engineering Diversity (CEED), Virginia Tech}{May 2024 -- August 2024}
+      {Summer Intern, Program Evaluation}
+\begin{bullets}
+  \item Evaluated CEED Summer 2024 pre-college engineering camps by analyzing quantitative survey data and qualitative focus-group data
+  \item Reassessed the tools used to measure camp impact; resulting work published in the 2025 CoNECD Conference proceedings
+  \item Mentored women and underrepresented minority students to advance engineering diversity initiatives
+\end{bullets}
+
+%------------------------------------------------------------------------------
+\section{Research Funding Participation}
+%------------------------------------------------------------------------------
+\entry{National Science Foundation (NSF), Innovations in Graduate Education (IGE) Program}{2026 -- Present}
+      {Postdoctoral Fellow and quantitative research lead, Georgia Institute of Technology}
+\begin{bullets}
+  \item Project: \textit{Flexible Graduate Student Funding Models: Industry Engagement and Internships for Career Development}
+  % \item Award No. XXXXXXX     <-- add NSF award number if available
+\end{bullets}
+
+%------------------------------------------------------------------------------
+\section{Publications}
+%------------------------------------------------------------------------------
+\subsection{Peer-Reviewed Journal Articles}
+\begin{refs}
+  \item[{[4]}] \me, \& Jones, B.\ D.\ (2025). Relationships among students' perceptions of motivational climate, course motivation, and effort in undergraduate STEM courses. \textit{Journal for STEM Education Research}. \doi{10.1007/s41979-025-00175-y}
+  \item[{[3]}] Jones, B.\ D., \me, \& Schunk, D.\ H.\ (2025). Applications of the MUSIC Model of Motivation and its associated inventories: A systematic review and meta-analysis. \textit{International Journal of Applied Positive Psychology, 10}, Article 67. \doi{10.1007/s41042-025-00249-7}
+  \item[{[2]}] Jones, B.\ D., Zhu, X., Ellis, M., \me, \& Fenerci, H.\ (2024). Connections between students' perceptions of the motivational climate in a course and their motivational beliefs and academic and career goals. \textit{European Journal of Engineering Education, 50}(4), 702--723. \doi{10.1080/03043797.2024.2446551}
+  \item[{[1]}] Evren Subaşı, A.\ T., \& \textbf{Uzuner (Ambarkutuk), Z.}\ (2020). The relationship between healthcare satisfaction, depression, and hopelessness level of mothers of children with cerebral palsy. \textit{The Journal of Academic Social Science, 8}(100), 34--42. \href{http://dx.doi.org/10.29228/ASOS.39880}{\nolinkurl{http://dx.doi.org/10.29228/ASOS.39880}}
+\end{refs}
+
+\subsection{Peer-Reviewed Conference Proceedings}
+\begin{refs}
+  \item[{[1]}] \me, McDaniel, J.\ M., Hampton, C., \& Lester, K.\ (2025). Revisiting assessment tools used to measure the impact of summer program interventions on perceptions and interest in engineering among underrepresented pre-college students -- A work in progress. In \textit{Proceedings of the 2025 Collaborative Network for Engineering and Computing Diversity (CoNECD) Conference}, San Antonio, TX. \doi{10.18260/1-2--54111}
+\end{refs}
+
+\subsection{Manuscripts Under Review}
+\begin{refs}
+  \item[{[3]}] \me, \& Jones, B.\ D.\ (under review). Motivational climate trajectories in a computer science course: A longitudinal study of gender and race differences in motivational beliefs. \textit{European Journal of Engineering Education}.
+  \item[{[2]}] Jones, B.\ D., Kim, I., Fenerci, H., \me, \& Ellis, M.\ (under review). Motivational climate as a complex dynamic system: Profiles, stability, and gender differences in a computer science course. \textit{Motivation and Emotion}.
+  \item[{[1]}] Jones, B.\ D., Bane, S., Walters, A., \me, \& Fenerci, H.\ (under review). Motivational climate and student evaluations of teaching: A longitudinal case study using a complex dynamic systems perspective. \textit{Current Psychology}.
+\end{refs}
+
+%------------------------------------------------------------------------------
+\section{Conference Presentations}
+%------------------------------------------------------------------------------
+\begin{refs}
+  \item[{[13]}] Seo, G., \& \me\ (2026). \textit{Beyond funding alone: Helping PhD students navigate financial challenges to succeed}. Strategy discussion presented at the Graduate Education Summit 2026, Atlanta, GA.
+  \item[{[12]}] \me, \& Jones, B.\ D.\ (2026, April). \textit{Effects of motivational climate on motivational beliefs in computer science: A longitudinal analysis}. Paper presented at the annual meeting of the American Educational Research Association (AERA), Los Angeles, CA.
+  \item[{[11]}] Saylor, B., Jones, B.\ D., \me, \& Fenerci, H.\ (2026, April). \textit{Relationships between motivational climate and course ratings in an educational psychology course over time}. Paper presented at the annual meeting of the AERA, Los Angeles, CA.
+  \item[{[10]}] \me, \& Jones, B.\ D.\ (2025, April). \textit{The impact of course perceptions on motivational beliefs in a computer science course over time}. Paper presented at the annual meeting of the AERA, Denver, CO.
+  \item[{[9]}] \me, \& Jones, B.\ D.\ (2025, April). \textit{Comparing motivational climate perceptions, motivation, and effort across online and in-person mathematics courses}. Research presented at the annual meeting of the AERA, Denver, CO.
+  \item[{[8]}] Jones, B.\ D., Kim, I., Fenerci, H., Ellis, M., \& \me\ (2025, April). \textit{Relationships between engineering course climate and domain-specific beliefs: Differences between men and women}. Paper presented at the annual meeting of the AERA, Denver, CO.
+  \item[{[7]}] \me, \& Jones, B.\ D.\ (2025, February). \textit{Relationships between motivation constructs and key student outcomes: A meta-analysis}. Research presented at the Conference on Higher Education Pedagogy, Blacksburg, VA.
+  \item[{[6]}] Jones, B.\ D., \me, \& Gallagher, J.\ (2025, February). \textit{Surveying the motivational climate in courses to improve student engagement}. Presentation at the Conference on Higher Education Pedagogy, Blacksburg, VA.
+  \item[{[5]}] \me, \& Jones, B.\ D.\ (2024, August). \textit{Undergraduate students' perceptions of the motivational climate predict their motivation}. Research presented at the annual convention of the American Psychological Association (APA), Seattle, WA.
+  \item[{[4]}] \me, \& Jones, B.\ D.\ (2024, March). \textit{Relationships between students' perceptions of motivational climate and their motivation in an undergraduate course: A MUSIC model perspective}. Research presented at the Graduate Research Symposium, Virginia Tech, Blacksburg, VA.
+  \item[{[3]}] Xie, P., Nichols, M., \me, Alsharif, A., \& Ali, S.\ (2023, October). \textit{Experiences, barriers, and challenges for engaging international students in STEM}. Presentation at Universal Design for Learning Day, Blacksburg, VA.
+  \item[{[2]}] Xie, P., Nichols, M., \me, Alsharif, A., \& Ali, S.\ (2023, October). \textit{Experiences, barriers, and challenges for engaging international students in STEM}. Presentation at the Digicon 2023 Conference, Online.
+  \item[{[1]}] Jones, B.\ D., Zhu, X., Ellis, M., Fenerci, H., \& \me\ (2023, August). \textit{Relationships between course motivational climate and students' computer science beliefs and goals}. Research presented at the annual convention of the APA, Washington, DC.
+\end{refs}
+
+%------------------------------------------------------------------------------
+\section{Peer Review and Judging Activities}
+%------------------------------------------------------------------------------
+\entry{Journal Manuscript Reviewer}{2024 -- Present}{7 peer-reviewed journals}
+\begin{bullets}
+  \item \textit{Scientific Reports} (2026)
+  \item \textit{International Journal of STEM Education} (2026)
+  \item \textit{Computer Science Education} (2026)
+  \item \textit{BMC Psychology} (2026)
+  \item \textit{International Journal of Teaching and Learning in Higher Education} (2026)
+  \item \textit{Review of Behavioral Economics} (2025)
+  \item \textit{Cogent Psychology} (2024)
+\end{bullets}
+
+\entry{Conference Proposal Reviewer}{2024 -- Present}{3 conferences}
+\begin{bullets}
+  \item American Educational Research Association (AERA) Annual Meeting (2026, 2027)
+  \item American Psychological Association (APA) Annual Convention (2024, 2025, 2026)
+  \item Graduate and Professional Student Senate Research Symposium, Virginia Tech (2026)
+\end{bullets}
+
+%------------------------------------------------------------------------------
+\section{Leadership and Professional Service}
+%------------------------------------------------------------------------------
+\entry{Georgia Tech Postdoctoral Association (GTPA), Atlanta, GA}{2026 -- Present}
+      {Board Member and Committee Chair}
+\vspace{3pt}
+\entry{World Education Research Association (WERA)}{2025 -- Present}
+      {Volunteer Contributor, International Research Network for Motivating Students}
+\vspace{3pt}
+\entry{American Psychological Association (APA)}{2022 -- 2025}
+      {Campus Ambassador, Virginia Tech}
+
+%------------------------------------------------------------------------------
+\section{Honors and Awards}
+%------------------------------------------------------------------------------
+\entry{Summer Cunningham Fellowship}{May 2025}
+      {Virginia Tech Graduate School; awarded to support dissertation writing and defense preparation}
+\vspace{3pt}
+\entry{Academic Success Scholarship}{2013 -- 2017}
+      {Başkent University, Türkiye; covered academic expenses, including tuition}
+\vspace{3pt}
+\entry{Certificate of Honor}{2016 -- 2017}
+      {Başkent University, Türkiye; honor student for four semesters}
+
+%------------------------------------------------------------------------------
+\section{Teaching Experience}
+%------------------------------------------------------------------------------
+\entry{Virginia Tech, School of Education, Blacksburg, VA}{August 2022 -- May 2026}
+      {Instructor of Record and Graduate Teaching Assistant}
+\begin{bullets}
+  \item Instructor of record: Educational Assessment (EDEP 3474; Spring 2025, Fall 2025, Spring 2026); Educational Psychology for PK-12 Teachers (EDEP 2374; Fall 2023)
+  \item Teaching assistant: Psychological Foundations for Teachers (EDEP 5154; Fall 2022, Spring 2023, Spring 2025); Educational Psychology for PK-12 Teachers (EDEP 2374; Spring 2023); Educational Assessment (EDEP 3474; Fall 2024)
+  \item Associate Teaching Program Certificate, Center for the Integration of Research, Teaching, and Learning (CIRTL), April 2025
+\end{bullets}
+
+%------------------------------------------------------------------------------
+\section{Professional Memberships}
+%------------------------------------------------------------------------------
+\oneline{American Educational Research Association (AERA)}{2022 -- Present}
+\oneline{American Psychological Association (APA)}{2022 -- 2025}
+
+%------------------------------------------------------------------------------
+\section{Methodological Expertise}
+%------------------------------------------------------------------------------
+\begin{tabular*}{\linewidth}{@{}p{0.25\linewidth}>{\raggedright\arraybackslash}p{0.75\linewidth}@{}}
+  \textbf{Quantitative:}   & Structural equation modeling, multilevel modeling, longitudinal data analysis, survey design and validation, meta-analysis, systematic review \\[2pt]
+  \textbf{Qualitative:}    & Interview protocol design, semi-structured interviews, focus groups, qualitative coding, mixed-methods integration \\[2pt]
+  \textbf{Software:}       & R, SPSS, HLM, NVivo \\
+\end{tabular*}
+
+%------------------------------------------------------------------------------
+%  NOT INCLUDED FOR THE GREEN CARD EVALUATION (restore if needed)
+%------------------------------------------------------------------------------
+% \entry{Tall Oaks Montessori School, Blacksburg, VA}{February 2020 -- August 2021}{Teacher}
+% \entry{Yaşam Çocuk Kindergarten, Ankara, Türkiye}{September 2017 -- July 2018}{Psychologist and Education Coordinator}
+% \entry{Language \& Cognitive Development Lab, Virginia Tech, Blacksburg, VA}{August 2018 -- December 2019}{Volunteer Researcher}
+% In preparation: Ambarkutuk, Z., & Jones, B. D. How perceived course difficulty
+%   affects motivational climate, motivation, and effort: A model comparison.
+% Trainings (2020), UDL certificate (2024), languages, web skills.
+\end{document}
